@@ -1,0 +1,8 @@
+<!-- 注意：在text标签中的文字可以被长按复制 -->
+<view class="container">
+  <image class="avatar" src="/images/avatar/4.png"></image>
+  <text class="motto">Hello 放逐天际</text>
+  <view class="journey-container">
+    <text class="journey">开启小程序之旅</text>
+  </view>
+</view>
