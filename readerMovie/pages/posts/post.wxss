@@ -1,0 +1,8 @@
+.post-head {
+  width: 100%;
+  height: 600rpx;
+}
+.post-head image {
+  width: 100%;
+  height: 100%;
+}
