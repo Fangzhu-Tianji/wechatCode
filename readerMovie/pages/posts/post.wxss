@@ -52,16 +52,19 @@
 }
 .post-like {
   margin-left: 10px;
-  font-size: 28rpx;
   color: #666;
+  /* 使元素垂直对齐且消除边距 */
+  line-height: 16px;
+  font-size: 0;
 }
 .post-like-image {
   width: 16px;
   height: 16px;
-  vertical-align: middle;
   margin-right: 6px;
+  vertical-align: middle;
 }
 .post-like-font {
   margin-right: 20px;
+  font-size: 28rpx;
   vertical-align: middle;
 }
