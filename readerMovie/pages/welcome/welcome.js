@@ -7,6 +7,14 @@ Page({
   data: {
   
   },
+  onTap: function(event) {
+    // wx.navigateTo({
+    //   url: '../posts/post',
+    // })
+    wx.redirectTo({
+      url: "../posts/post"
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
