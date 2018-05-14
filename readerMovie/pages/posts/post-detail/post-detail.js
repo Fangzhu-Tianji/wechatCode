@@ -14,10 +14,16 @@ Page({
   onLoad: function (options) {
     this.data.currentPostId = options.id;
     var postId = options.id;
+    // 设置数据
     var postData = postsData.postList[postId];
     this.setData({
       postData: postData
     });
+    // 设置标题
+    wx.setNavigationBarTitle({
+      title: postData.title
+    })
+    // 收藏读取或者设置本地缓存
     var postsCollected = wx.getStorageSync('posts_collected');
     if (postsCollected == undefined) {
       this.setData({
@@ -30,8 +36,10 @@ Page({
       wx.setStorageSync('posts_collected', postsCollected);
     }
   },
+  // 收藏
   onColletionTap: function (event) {
     var that = this;
+    // 先读取本地缓存再设置本地缓存
     var postsCollected = wx.getStorageSync('posts_collected');
     var postCollected = postsCollected[that.data.currentPostId];
     postsCollected[that.data.currentPostId] = !postsCollected[that.data.currentPostId];
