@@ -25,7 +25,7 @@ Page({
     })
     // 收藏读取或者设置本地缓存
     var postsCollected = wx.getStorageSync('posts_collected');
-    if (postsCollected == undefined) {
+    if (postsCollected) {
       this.setData({
         collected: postsCollected[postId]
       })
@@ -42,7 +42,6 @@ Page({
     // 先读取本地缓存再设置本地缓存
     var postsCollected = wx.getStorageSync('posts_collected');
     var postCollected = postsCollected[that.data.currentPostId];
-    postsCollected[that.data.currentPostId] = !postsCollected[that.data.currentPostId];
     wx.showModal({
       title: '收藏',
       content: postsCollected[that.data.currentPostId] ? '取消收藏该文章？' : '收藏该文章？',
@@ -53,6 +52,7 @@ Page({
       confirmColor: "#405f80",
       success: function (res) {
         if (res.confirm) {
+          postsCollected[that.data.currentPostId] = !postsCollected[that.data.currentPostId];
           wx.setStorageSync('posts_collected', postsCollected);
           // 更新数据绑定变量，从而实现切换图片
           that.setData({
@@ -64,7 +64,24 @@ Page({
   },
   onShareTap: function (event) {
     var a = wx.getStorageSync('posts_collted');
-    console.log(a)
+    var itemList = [
+      '分享给微信好友',
+      '分享到朋友圈',
+      '分享到QQ',
+      '分享到微博'
+    ];
+    wx.showActionSheet({
+      itemList: itemList,
+      itemColor: '#405f80',
+      success: function(res) {
+        // res.cancel 用户是不是点击了取消按钮
+        // res.tapIndex 数组元素的序号，从0开始
+        wx.showToast({
+          title: "用户 " + itemList[res.tapIndex],
+          icon: 'success'
+        })
+      }
+    })
   }
 
 })
