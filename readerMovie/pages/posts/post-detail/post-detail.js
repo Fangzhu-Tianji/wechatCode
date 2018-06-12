@@ -62,6 +62,7 @@ Page({
       }
     })
   },
+  // 分享
   onShareTap: function (event) {
     var a = wx.getStorageSync('posts_collted');
     var itemList = [
@@ -81,6 +82,14 @@ Page({
           icon: 'success'
         })
       }
+    })
+  },
+  // 播放音乐
+  onMusicTap: function(event) {
+    wx.playBackgroundAudio({
+      dataUrl: "http://dl.stream.qqmusic.qq.com/C400003VzJdi4TiHzQ.m4a?vkey=4BCE41256368146703D707733B7B23F7ACD62A4317CBD81EBA8B096BEDB8F05772F9CB09535E0ED2039887F3123F89B02FB2D820A10A815E&guid=9802600344&uin=0&fromtag=66",
+      title: "夜夜夜夜-齐秦",
+      coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
     })
   }
 
