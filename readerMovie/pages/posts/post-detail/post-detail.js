@@ -1,19 +1,24 @@
 var postsData = require('../../../data/posts-data.js');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentPostId: 0
+    currentPostId: 0,
+    isPlayingMusic: false //是否进行背景音乐播放
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 上一页面传输的数据
     this.data.currentPostId = options.id;
     var postId = options.id;
+    // 获取app.js公共的数据
+    var globalData = app;
     // 设置数据
     var postData = postsData.postList[postId];
     this.setData({
@@ -86,11 +91,26 @@ Page({
   },
   // 播放音乐
   onMusicTap: function(event) {
-    wx.playBackgroundAudio({
-      dataUrl: "http://dl.stream.qqmusic.qq.com/C400003VzJdi4TiHzQ.m4a?vkey=4BCE41256368146703D707733B7B23F7ACD62A4317CBD81EBA8B096BEDB8F05772F9CB09535E0ED2039887F3123F89B02FB2D820A10A815E&guid=9802600344&uin=0&fromtag=66",
-      title: "夜夜夜夜-齐秦",
-      coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
-    })
+    var currentPostId = this.data.currentPostId;
+    var postData = postsData.postList[currentPostId];
+    var isPlayingMusic = this.data.isPlayingMusic;
+    if (isPlayingMusic) {
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      })
+    }
+    else {
+      wx.playBackgroundAudio({
+        dataUrl: postData.music.url,
+        title: postData.music.title,
+        coverImgUrl: postData.music.coverImg
+      });
+      this.setData({
+        isPlayingMusic: true
+      })
+
+    }
   }
 
 })

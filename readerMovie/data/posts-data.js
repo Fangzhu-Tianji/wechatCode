@@ -13,7 +13,7 @@ var local_database = [
     detail: "菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中，便足了一生矣。”漫漫人生长路，美食与爱岂可辜负？于是作为一个吃货，突然也很想回味一下属于我的味蕾记忆。记忆中的秋蟹，是家人的味道，弥漫着浓浓的亲情。\n\n是谁来自山川湖海，却囿于昼夜，厨房与爱？ 是母亲，深思熟虑，聪明耐心。吃蟹前，总会拿出几件工具，煞有介事而乐此不疲。告诉我们螃蟹至寒，需要佐以姜茶以祛寒，在配备的米醋小碟里，亦添入姜丝与紫苏，前者驱寒后者增香。泡好菊花茶，岁月静好，我们静等。",
     postId: 0,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/C100003507bR0gDKBm.m4a?fromtag=38",
+      url: "http://dl.stream.qqmusic.qq.com/C400003VzJdi4TiHzQ.m4a?vkey=4BCE41256368146703D707733B7B23F7ACD62A4317CBD81EBA8B096BEDB8F05772F9CB09535E0ED2039887F3123F89B02FB2D820A10A815E&guid=9802600344&uin=0&fromtag=66",
       title: "夜夜夜夜-齐秦",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
     }
@@ -32,8 +32,8 @@ var local_database = [
     avatar: "/images/avatar/1.png",
     postId: 1,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/C100003GdCmG4NkEOR.m4a?fromtag=38",
-      title: "鬼迷心窍-李宗盛",
+      url: "http://dl.stream.qqmusic.qq.com/C400001Ut7r146AZMZ.m4a?vkey=D50FC674982DCAB8284B837C3B5748DF740344205C1168AD5FF66851311B050F878DB7CB0972F978BD8A3758E4170FEEA3FF1C45DC660BA5&guid=8519334260&uin=0&fromtag=66",
+      title: "海辺のカフェ (海边的咖啡馆)",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000002xOmp62kqSic.jpg?max_age=2592000"
     }
   },
@@ -52,8 +52,8 @@ var local_database = [
     avatar: "/images/avatar/3.png",
     postId: 2,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/C100004HLusI2lLjZy.m4a?fromtag=38",
-      title: "女儿情-万晓利",
+      url: "http://dl.stream.qqmusic.qq.com/C400002DuMJE0E9YSa.m4a?vkey=59F99901246ECC4BF316A61BF76E6C36F4C43C0EC8BB19652890A47A999E25AD0457C807BE41427E1E43D082571CAA5788D961F67F5B8CB8&guid=8519334260&uin=0&fromtag=66",
+      title: "インドア系ならトラックメイカー (内向都是作曲家)",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000004Wv5BO30pPc0.jpg?max_age=2592000"
     }
   },
@@ -71,8 +71,8 @@ var local_database = [
     avatar: "/images/avatar/5.png",
     postId: 3,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/C100002mWVx72p8Ugp.m4a?fromtag=38",
-      title: "恋恋风尘-老狼",
+      url: "http://dl.stream.qqmusic.qq.com/C400000iF32o2ZThoq.m4a?vkey=5943F528E6C33BA86F3724A6F59B4DC8506C7EA41747DC7038E30C134FF9B633B12D8CEFCA2D6FC20C4852A1A46EFEE2694C18E8174920D1&guid=8519334260&uin=0&fromtag=66",
+      title: "放弃",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001VaXQX1Z1Imq.jpg?max_age=2592000",
     }
   },
@@ -90,8 +90,8 @@ var local_database = [
     avatar: "../../../images/avatar/3.png",
     postId: 4,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/C100000Zn0vS4fKKo8.m4a?fromtag=38",
-      title: "沉默是金-张国荣",
+      url: "http://dl.stream.qqmusic.qq.com/C400004Mb9td06gfM4.m4a?vkey=5595697E6F3993C903C0354CE08B86E2F3F58951C25CB7A67390F294BD07B618BCCBCAC2C85AAA25027F917421B3588318C8ED80E57193E5&guid=8519334260&uin=0&fromtag=66",
+      title: "我真的累了",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003at0mJ2YrR2H.jpg?max_age=2592000"
     }
   },
@@ -109,8 +109,8 @@ var local_database = [
     avatar: "../../../images/avatar/5.png",
     postId: 5,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/C100002I8eGJ28BI17.m4a?fromtag=38",
-      title: "朋友-谭咏麟",
+      url: "http://dl.stream.qqmusic.qq.com/C400001H3aXP1jHwie.m4a?vkey=2354292A2B41DDC24E34C5004F83424DF5ACA7CA1953E1FB1CCC81BF52876D48B48BE9D7BA19B771F311D0354C857A6304B5D34C876E9254&guid=8519334260&uin=0&fromtag=66",
+      title: "以后的以后",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000004eGsCN3SUheO.jpg?max_age=2592000"
     }
   },
