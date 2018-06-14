@@ -1,0 +1,9 @@
+<!-- 引入模板 -->
+<import src="../stars/stars-template.wxml" />
+<template name="movieTemplate">
+  <view>
+    <image src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523632248.webp"></image>
+    <text>厕所英雄 Toilet - Ek Prem Katha</text>
+    <template is="starsTemplate" /> 
+  </view>
+</template>

@@ -17,8 +17,6 @@ Page({
     // 上一页面传输的数据
     this.data.currentPostId = options.id;
     var postId = options.id;
-    // 获取app.js公共的数据
-    var globalData = app;
     // 设置数据
     var postData = postsData.postList[postId];
     this.setData({
@@ -40,6 +38,34 @@ Page({
       postsCollected[postId] = false;
       wx.setStorageSync('posts_collected', postsCollected);
     }
+    // 监听音乐变化
+    this.setMusicMonitor();
+    if (app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId == this.data.currentPostId) {
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+  },
+  // 设置音乐
+  setMusicMonitor: function() {
+    var that = this;
+    wx.onBackgroundAudioPlay(function() {
+      // wx.showToast({
+      //   title: '1111'
+      // });
+      that.setData({
+        isPlayingMusic: true
+      });
+      app.globalData.g_isPlayingMusic = true;
+      app.globalData.g_currentMusicPostId = that.data.currentPostId;
+    });
+    wx.onBackgroundAudioPause(function () {
+      that.setData({
+        isPlayingMusic: false
+      });
+      app.globalData.g_isPlayingMusic = false;
+      app.globalData.g_currentMusicPostId = null;
+    })
   },
   // 收藏
   onColletionTap: function (event) {
@@ -99,6 +125,7 @@ Page({
       this.setData({
         isPlayingMusic: false
       })
+      app.globalData.g_isPlayingMusic = false;
     }
     else {
       wx.playBackgroundAudio({
@@ -109,7 +136,8 @@ Page({
       this.setData({
         isPlayingMusic: true
       })
-
+      app.globalData.g_isPlayingMusic = true;
+      app.globalData.g_currentMusicPostId = this.data.currentPostId;
     }
   }
 

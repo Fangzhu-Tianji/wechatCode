@@ -15,10 +15,16 @@ Page({
       postList: postsData.postList 
     })
   },
-  // 去详情页
+  // 列表去详情页
   goDetail: function (event) {
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + event.currentTarget.dataset.id
+    })
+  },
+  // 轮播去详情页
+  goDetailSwiper: function (event) {
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + event.target.dataset.id
     })
   }
 })
