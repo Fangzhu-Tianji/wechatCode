@@ -4,3 +4,7 @@ text{
     font-size: 24rpx;
     color: #666;
 }
+/* 多出的文字用省略号代替 */
+.texthide {text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+.texthides {display: -webkit-box !important; overflow: hidden;text-overflow: ellipsis;word-break: break-all;
+-webkit-box-orient: vertical;-webkit-line-clamp: 3; /*数字几就代表几行*/ }
