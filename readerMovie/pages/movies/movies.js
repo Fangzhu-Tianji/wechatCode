@@ -1,77 +1,56 @@
 // pages/movies/movies.js
+var util = require('../../utils/util.js')
+var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    inTheaters: {},
+    comingSoon: {},
+    top250: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
+    var baseUrl = app.globalData.doubanBase;
+    var inTheatersUrl = baseUrl + '/v2/movie/in_theaters?start=0&count=3';
+    var comingSoonUrl = baseUrl + '/v2/movie/coming_soon?start=0&count=3';
+    var top250Url = baseUrl + '/v2/movie/top250?start=0&count=3';
+    this.getMovieListData(inTheatersUrl, 'inTheaters');
+    this.getMovieListData(comingSoonUrl, 'comingSoon');
+    this.getMovieListData(top250Url, 'top250');
+  },
+  // 数据请求
+  getMovieListData: function (url, categoryTitle) {
+    var that = this;
     wx.request({
-      url: 'https://douban.uieee.com/v2/movie/top250', //仅为示例，并非真实的接口地址
-      data: {},
+      url: url,
       method: 'GET',
       header: {
         "Content-Type": "application"
       },
       success: function (res) {
-        console.log(res)
+        that.processDoubanData(res.data, categoryTitle);
       }
     })
-
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  // 请求后的数据进行处理
+  processDoubanData: function (movieDouban, categoryTitle) {
+    var movies = [];
+    var subject = movieDouban.subjects;
+    for (var sub in subject) {
+      var title = subject[sub].title;
+      if(title.length >= 6) {
+        title = title.substring(0,6) + '...';
+      }
+      var temp = {
+        stars: util.convertToStarsArray(subject[sub].rating.stars),
+        title: title,
+        average: subject[sub].rating.average,
+        coverageUrl: subject[sub].images.large,
+        movieId: subject[sub].id,
+      }
+      movies.push(temp);
+    }
+    // 动态设置数据，技巧，牢记
+    var readyData = {};
+    readyData[categoryTitle] = movies;
+    this.setData(readyData);
   }
 })

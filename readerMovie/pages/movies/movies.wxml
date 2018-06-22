@@ -1,5 +1,13 @@
 <!-- 引入模板 -->
 <import src="movie-list/movie-list-template.wxml" />
-<template is="movieListTemplate" /> 
-<template is="movieListTemplate" /> 
-<template is="movieListTemplate" /> 
+<view class="container">
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{movies:inTheaters,title:'正在热映'}}" />
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{movies:comingSoon,title:'即将上映'}}" /> 
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{movies:top250,title:'豆瓣Top250'}}" /> 
+  </view>
+</view>

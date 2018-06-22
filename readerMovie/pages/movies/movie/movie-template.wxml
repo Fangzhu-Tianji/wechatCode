@@ -2,8 +2,8 @@
 <import src="../stars/stars-template.wxml" />
 <template name="movieTemplate">
   <view class='movie-container'>
-    <image class='movie-img' src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523632248.webp"></image>
-    <text class='texthide movie-title'>厕所英雄</text>
-    <template is="starsTemplate" /> 
+    <image class='movie-img' src="{{coverageUrl}}"></image>
+    <text class='texthide movie-title'>{{title}}</text>
+    <template is="starsTemplate" data="{{stars:stars,average:average}}" /> 
   </view>
 </template>

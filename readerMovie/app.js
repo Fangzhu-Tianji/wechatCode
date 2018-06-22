@@ -30,6 +30,7 @@ App({
   // 公共数据
   globalData: {
     g_isPlayingMusic: false, //音乐是否在播放（post-detail页面）
-    g_currentMusicPostId: null //音乐id
+    g_currentMusicPostId: null, //音乐id
+    doubanBase: "https://douban.uieee.com"
   }
 })
