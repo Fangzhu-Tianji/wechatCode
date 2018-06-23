@@ -4,6 +4,13 @@ text{
     font-size: 24rpx;
     color: #666;
 }
+/* 浮动 */
+.fl { float: left;}
+.fr { float: right;}
+.clearfix { zoom: 1; }
+.clearfix:before,
+.clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; } /*清除浮动*/
 /* 多出的文字用省略号代替 */
 .texthide {text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .texthides {display: -webkit-box !important; overflow: hidden;text-overflow: ellipsis;word-break: break-all;

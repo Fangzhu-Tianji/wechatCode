@@ -1,0 +1,11 @@
+/* pages/movies/movie-grid/movie-grid-template.wxss */
+@import "../movie/movie-template.wxss";
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40rpx 0 40rpx 6rpx; 
+}
+.single-view-container {
+  margin-bottom: 40rpx;
+}
