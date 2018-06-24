@@ -1,0 +1,9 @@
+<import src="../movie-grid/movie-grid-template.wxml" />
+<view class="search">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <input placeholder="请输入电影名" confirm-type="search" bindconfirm="goSearch" focus="true" />
+</view>
+<view bindtouchmove="handletouchmove">
+  <template is="movieGridTemplate" data="{{movies}}" />
+</view>
+<view class="go-top" catchtap="backToTop" wx:if="{{showGoTop}}">GO</view>

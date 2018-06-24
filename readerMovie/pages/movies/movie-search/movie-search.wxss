@@ -1,0 +1,36 @@
+/* pages/movies/movie-search/movie-search.wxss */
+@import "../movie-grid/movie-grid-template.wxss";
+.search {
+  box-sizing: border-box;
+  height: 80rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+.search-img {
+  margin-right: 14rpx;
+}
+.search input {
+  flex : 1;
+  height: 100%;
+  font-size: 28rpx;
+}
+.grid-container {
+  height: 1120rpx;
+}
+/* 回到顶部 */
+.go-top {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(0,0,0,.7);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 40rpx;
+  right: 20rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,5 +1,9 @@
 <!-- 引入模板 -->
 <import src="movie-list/movie-list-template.wxml" />
+<view class="search" catchtap="onSearchTap">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <text>请输入电影名</text>
+</view>
 <view class="container">
   <view class="movies-template">
     <template is="movieListTemplate" data="{{movies:inTheaters,title:'正在热映'}}" />

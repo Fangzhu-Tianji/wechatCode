@@ -4,7 +4,8 @@
     "pages/welcome/welcome",
     "pages/posts/post",
     "pages/posts/post-detail/post-detail",
-    "pages/movies/more-movie/more-movie"
+    "pages/movies/more-movie/more-movie",
+    "pages/movies/movie-search/movie-search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,7 +15,7 @@
   },
   "tabBar": {
     "selectedColor": "#405f80",
-    "borderStyle": "white",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/posts/post",

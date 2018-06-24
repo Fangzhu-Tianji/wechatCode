@@ -7,3 +7,21 @@
 .movies-template {
   margin-bottom: 30rpx;
 }
+
+.search {
+  box-sizing: border-box;
+  height: 80rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+.search-img {
+  margin-right: 14rpx;
+}
+.search text {
+  flex : 1;
+  font-size: 28rpx;
+  color: #808080;
+}

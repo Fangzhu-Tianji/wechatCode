@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    category: ''
+    movies: [], //渲染的数据
+    requestUrl: '', //请求的地址
+    totalCount: 0 //页数
   },
 
   /**
@@ -30,6 +32,7 @@ Page({
         dataUrl = app.globalData.doubanBase + "/v2/movie/top250";
         break;
     }
+    this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData)
   },
   // 请求后的数据进行处理
@@ -51,7 +54,22 @@ Page({
       movies.push(temp);
     }
     this.setData({
-      movies: movies
+      movies: this.data.movies.concat(movies)
     });
+    this.data.totalCount += 1;
+    wx.hideNavigationBarLoading(); //隐藏加载菊花
+    wx.stopPullDownRefresh(); // 停止下拉动作 
+  },
+  // 上拉加载更多
+  onReachBottom: function () {
+    wx.showNavigationBarLoading(); //显示加载菊花
+    util.http(this.data.requestUrl + '?start=' + this.data.totalCount * 20 + '&count=20', this.processDoubanData)
+  },
+  // 下拉刷新
+  onPullDownRefresh: function() {
+    wx.showNavigationBarLoading(); //显示加载菊花
+    util.http(this.data.requestUrl, this.processDoubanData);
+    this.data.movies = [];
+    this.data.totalCount = 0;
   }
 })

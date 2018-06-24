@@ -16,10 +16,17 @@ Page({
     this.getMovieListData(comingSoonUrl, 'comingSoon');
     this.getMovieListData(top250Url, 'top250');
   },
+  // 更多页面
   onMoreTap: function(event) {
     var category = event.currentTarget.dataset.category;
     wx.navigateTo({
       url: 'more-movie/more-movie?category=' + category
+    })
+  },
+  // 搜索页面
+  onSearchTap: function() {
+    wx.navigateTo({
+      url: 'movie-search/movie-search'
     })
   },
   // 数据请求
