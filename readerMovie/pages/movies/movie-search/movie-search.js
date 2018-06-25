@@ -27,6 +27,13 @@ Page({
     this.data.searchVal = event.detail.value;
     util.http(app.globalData.doubanBase + "/v2/movie/search?q=" + event.detail.value, this.processDoubanData);
   },
+  // 进入电影详情
+  onMovieTap: function (event) {
+    var movieid = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id=' + movieid
+    })
+  },
   // 请求后的数据进行处理
   processDoubanData: function (movieDouban) {
     var movies = [];

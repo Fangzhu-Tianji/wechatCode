@@ -29,6 +29,13 @@ Page({
       url: 'movie-search/movie-search'
     })
   },
+  // 进入电影详情
+  onMovieTap: function (event) {
+    var movieid = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: 'movie-detail/movie-detail?id=' + movieid
+    })
+  },
   // 数据请求
   getMovieListData: function (url, categoryTitle) {
     var that = this;

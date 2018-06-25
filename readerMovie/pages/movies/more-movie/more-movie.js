@@ -35,6 +35,13 @@ Page({
     this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData)
   },
+  // 进入电影详情
+  onMovieTap: function (event) {
+    var movieid = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id=' + movieid
+    })
+  },
   // 请求后的数据进行处理
   processDoubanData: function (movieDouban) {
     var movies = [];
