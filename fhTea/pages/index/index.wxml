@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='head'>
+    <view class='address'>
+      <text class="iconfont icon-dingwei1"></text>
+      <text>深圳市</text>
+    </view>
+    <view class='search'>
+      <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+      <text>搜索</text>
+    </view>
+  </view>
+</view>

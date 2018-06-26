@@ -1,7 +1,14 @@
 <!-- 注意：在text标签中的文字可以被长按复制 -->
 <view class="container">
-  <image class="avatar" src="/images/avatar/4.png"></image>
-  <text class="motto">Hello 放逐天际</text>
+  <!-- <image class="avatar" src="/images/avatar/4.png"></image> -->
+  <!-- <text class="motto">Hello 放逐天际</text> -->
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="motto">
+    <text decode="true">Hello&nbsp;&nbsp;</text>
+    <open-data type="userNickName"></open-data>
+  </view>
   <view class="journey-container" data-name='zch' bindtap="onTap">
     <text class="journey" data-name='children'>开启小程序之旅</text>
   </view>

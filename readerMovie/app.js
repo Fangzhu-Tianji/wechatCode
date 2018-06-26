@@ -5,6 +5,20 @@ App({
    */
   onLaunch: function () {
     console.log("onLaunch");
+    // wx.login({
+    //   success: function (res) {
+    //     console.log(res);
+    //     if (res.code) {
+    //       wx.getUserInfo({
+    //         success: function (ress) {
+    //           console.log(ress)
+    //         }
+    //       })
+    //     } else {
+    //       console.log('登录失败！' + res.errMsg)
+    //     }
+    //   }
+    // });
   },
 
   /**

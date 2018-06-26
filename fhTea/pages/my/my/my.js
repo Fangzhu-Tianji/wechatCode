@@ -1,4 +1,4 @@
-// pages/welcome/welcome.js
+// pages/my/my/my.js
 Page({
 
   /**
@@ -6,15 +6,6 @@ Page({
    */
   data: {
   
-  },
-  onTap: function(event) {
-    console.log('999')
-    wx.switchTab({
-      url: '/pages/posts/post',
-    })
-    // wx.redirectTo({
-    //   url: "../posts/post"
-    // })
   },
 
   /**

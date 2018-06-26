@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/my/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "福海U福",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#f60500",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye-a.png"
+      },
+      {
+        "text": "更多",
+        "pagePath": "pages/category/category",
+        "iconPath": "images/gengduo.png",
+        "selectedIconPath": "images/gengduo-a.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/gouwu.png",
+        "selectedIconPath": "images/gouwu-a.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my/my",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode-a.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 20000
+  },
+  "debug": false
+}
