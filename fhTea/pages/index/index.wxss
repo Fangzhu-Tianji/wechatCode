@@ -1,7 +1,27 @@
 /**index.wxss**/
-.head { box-sizing: border-box; height: 88rpx; width: 100%; padding: 14rpx 30rpx; background-color: #f7fffb; display: flex; align-items: center; }
-.head .address { flex: 1; line-height: 100%; }
-.head .address .txt { margin-left: 6rpx; } 
+.head { box-sizing: border-box; height: 88rpx; width: 100%; padding: 14rpx 20rpx; background-color: #f7fffb; display: flex; align-items: center; }
+.head .address { line-height: 100%; display: flex; }
+.head .address .txt { max-width: 120rpx; margin-left: 6rpx; margin-right: 20rpx; } 
 .head .address .iconfont { color: #f60500; } 
-.head .search { flex: 4; height: 100%; display: flex; padding: 0 10rpx; align-items: center; background-color: #e5e5e5; border-radius: 10rpx; }
-.head .search .txt { margin-left: 6rpx; } 
+.head .search { flex: 1; height: 100%; display: flex; padding: 0 10rpx; align-items: center; background-color: #e5e5e5; border-radius: 10rpx; }
+.head .search .txt { margin-left: 14rpx; }
+.i-swiper { width: 100%; height: 480rpx; }
+.i-swiper image { width: 100%; height: 100%; }
+/* 热门 */
+.hot { box-sizing: border-box; width: 100%; padding: 0 10rpx; }
+.hot-item { box-sizing: border-box; width:33.33%; padding: 20rpx; display: flex; flex-direction: column; }
+.hot-item .item-head { height: 40rpx; margin-bottom: 16rpx; display: flex; align-items: center; }
+.hot-item .item-head image { width: 30rpx; height: 30rpx; margin-right: 10rpx; }
+.hot-item .item-head text { color: #f60500; }
+.hot-item .pic { width: 100%; height: 150rpx; margin-bottom: 10rpx; }
+.hot-item .name { margin-bottom: 8rpx; }
+.hot-item .price { font-size: 24rpx; color: #f60500; margin-bottom: 8rpx; }
+/* 全部 */
+.whole-title { display: flex; justify-content: center; align-items: center; margin: 30rpx 0 20rpx; }
+.whole-title .line { width: 160rpx; height: 2rpx; background-color: #f60500; }
+.whole-title .txt { color: #f60500; padding: 0 30rpx; }
+.whole-content { display: flex; flex-wrap: wrap; padding: 10rpx; }
+.whole-content .good-item { box-sizing: border-box; display: flex; flex-direction: column; width: 365rpx; padding: 0 20rpx 30rpx; }
+.whole-content .good-item .pic { width: 100%; height: 250rpx; margin-bottom: 20rpx; }
+.whole-content .good-item .name { text-align: center; margin-bottom:8rpx; }
+.whole-content .good-item .price { text-align: center; color: #f60500; }

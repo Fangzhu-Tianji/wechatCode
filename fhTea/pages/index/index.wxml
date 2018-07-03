@@ -1,13 +1,78 @@
 <!--index.wxml-->
 <view class="container">
+  <!-- 头部 -->
   <view class='head'>
     <view class='address'>
       <text class="iconfont icon-dingwei1"></text>
-      <text class='txt'>深圳市</text>
+      <text class='texthide txt'>深圳市</text>
     </view>
     <view class='search'>
       <icon type="search" class="search-img" size="13" color="#f60500"></icon>
-      <text class='txt'>搜索</text>
+      <text class='txt'>请输入商品名称</text>
+    </view>
+  </view>
+  <!-- 轮播 -->
+  <swiper class="i-swiper" indicator-dots="true" indicator-color="rgba(0,0,0,.6)" indicator-active-color="rgba(246,5,0,1)" autoplay="true" circular="true" catchtap="goDetailSwiper">
+    <block wx:for="{{imgUrls}}" wx:key="item" wx:for-index="index" wx:for-item="item">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 热门的 -->
+  <view class='clearfix hot'>
+    <view class='fl hot-item'>
+      <view class='item-head'>
+        <image src="/images/icon-recommend.png"></image>
+        <text>精品推荐</text>
+      </view>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <text class='texthide name'>新会小青柑普尔茶</text>
+      <text class='price'>￥690.00</text>
+      <text class='texthide type'>快递包邮</text>
+    </view>
+    <view class='fl hot-item'>
+      <view class='item-head'>
+        <image src="/images/icon-time-limit.png"></image>
+        <text>限时折扣</text>
+      </view>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <text class='texthide name'>新会小青</text>
+      <text class='price'>￥690.00</text>
+      <text class='texthide type'>快递包邮</text>
+    </view>
+    <view class='fl hot-item'>
+      <view class='item-head'>
+        <image src="/images/icon-new-product.png"></image>
+        <text>新品上市</text>
+      </view>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <text class='texthide name'>新会小青</text>
+      <text class='price'>￥690.00</text>
+      <text class='texthide type'>快递包邮</text>
+    </view>
+  </view>
+  <!-- 全部 -->
+  <view class='whole-title'>
+    <text class='line'></text>
+    <text class='txt'>全部商品</text>
+    <text class='line'></text>
+  </view>
+  <view class='whole-content'>
+    <view class='good-item'>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <text class='texthide name'>新会小青</text>
+      <text class='price'>￥690.00</text>
+    </view>
+    <view class='good-item'>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <text class='texthide name'>新会小青</text>
+      <text class='price'>￥690.00</text>
+    </view>
+    <view class='good-item'>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <text class='texthide name'>新会小青</text>
+      <text class='price'>￥690.00</text>
     </view>
   </view>
 </view>

@@ -1,5 +1,5 @@
 /**app.wxss**/
-text{ font-family: MicroSoft Yahei; font-size: 24rpx; color: #666; }
+text{ font-family: MicroSoft Yahei; font-size: 28rpx; color: #666; }
 /* 浮动 */
 .fl { float: left;}
 .fr { float: right;}

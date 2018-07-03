@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/category/category",
+    "pages/index/index",
     "pages/cart/cart",
-    "pages/my/my/my"
+    "pages/my/my/my",
+    "pages/search/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#f7fffb",
     "navigationBarTitleText": "福海U福",
     "navigationBarTextStyle": "black"
   },

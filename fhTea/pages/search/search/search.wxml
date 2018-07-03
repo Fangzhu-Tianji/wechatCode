@@ -1,0 +1,8 @@
+<!--pages/search/search/search.wxml-->
+<view class='head'>
+  <view class='search'>
+    <icon type="search" class="search-img" size="13" color="#f60500"></icon>
+    <input placeholder="请输入商品名称" value="{{searchVal}}" confirm-type="search" bindinput="onTapInput" bindconfirm="goSearch" focus="true" />
+    <icon type="clear" class="clear" size="16" wx:if="{{showClear}}" catchtap="clearInput"></icon>
+  </view>
+</view>
