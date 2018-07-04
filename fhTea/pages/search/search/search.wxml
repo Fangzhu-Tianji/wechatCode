@@ -6,3 +6,15 @@
     <icon type="clear" class="clear" size="16" wx:if="{{showClear}}" catchtap="clearInput"></icon>
   </view>
 </view>
+<view class='card-content'>
+  <view class='search-item'>
+    <view class='s-head'>
+      <text>最近搜索</text>
+      <text class="iconfont icon-lajixiang" catchtap="clearSearch"></text>
+    </view>
+    <view class='default' wx:if="{{cacheData.length == 0}}">暂无搜索历史记录</view>
+     <view class='s-content' wx:else>
+      <text class='item' wx:for="{{cacheData}}" wx:key="item">{{item}}</text>
+    </view> 
+  </view>
+</view>

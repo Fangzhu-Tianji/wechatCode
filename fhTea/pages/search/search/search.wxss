@@ -3,3 +3,8 @@
 .search-img { margin-right: 14rpx; }
 .search input { flex : 1; height: 100%; font-size: 28rpx; }
 .search .clear { position: absolute; top: 30rpx; right: 10rpx; }
+.search-item .s-head { box-sizing: border-box; height: 80rpx; width: 100%; padding: 0 30rpx; display: flex; justify-content: space-between; align-items: center; }
+.search-item .s-head .iconfont { font-size: 28rpx; }
+.search-item .s-content { padding: 0 30rpx; display: flex; flex-wrap: wrap; }
+.search-item .s-content .item { padding: 12rpx 20px; background-color: #f7f7f7; margin: 0 20rpx 20rpx 0; }
+.search-item .default { font-size: 24rpx; color: #999; text-align: center; }
