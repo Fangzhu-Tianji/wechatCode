@@ -1,10 +1,34 @@
 <!--pages/category/category.wxml-->
 <view class='container'>
   <!-- 头部 -->
-  <view class='head' catchtap="onSearchTap">
-    <view class='search'>
+  <view class='head'>
+    <view class='sweep' catchtap="onSweep">
+      <text class="iconfont icon-tubiaozhizuomoban"></text>
+      <text class='txt'>扫一扫</text>
+    </view>
+    <view class='search' catchtap="onSearchTap">
       <icon type="search" class="search-img" size="13" color="#f60500"></icon>
       <text class='txt'>请输入商品名称</text>
+    </view>
+  </view>
+  <!-- tab -->
+  <view class='category-tab'>
+    <view class='category-tab-item active'>综合</view>
+    <view class='category-tab-item'>销量</view>
+    <view class='category-tab-item'>
+      价格
+      <text class='up-triangle active'></text>
+      <text class='down-triangle'></text>
+    </view>
+    <view class='category-tab-item'>筛选</view>
+  </view>
+  <view class='category-content'>
+    <view class='category-item'>
+      <image src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <view class='content'>
+        <view class='name'>福海印象（散装）小青柑</view>
+        <view class='price'>￥298.00</view>
+      </view>
     </view>
   </view>
 </view>

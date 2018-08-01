@@ -4,7 +4,7 @@
   <view class='head'>
     <view class='address'>
       <text class="iconfont icon-dingwei1"></text>
-      <text class='texthide txt'>深圳市</text>
+      <text class='texthide txt'>{{city}}</text>
     </view>
     <view class='search'>
       <icon type="search" class="search-img" size="13" color="#f60500"></icon>

@@ -6,16 +6,6 @@ T.DOMAIN = {
   IMG: 'https://bsoss.oss-cn-hangzhou.aliyuncs.com/',
   NAME: '福海U服'
 };
-// 通过ID、NAME、TAGNAME获取标签
-T.$id = function (id) {
-  return document.getElementById(id);
-};
-T.$name = function (name) {
-  return document.getElementsByName(name);
-};
-T.$tagname = function (tagName) {
-  return document.getElementsByTagName(tagName);
-};
 //删除左边的空格
 T.ltrim = function (str) {
   return str.replace(/(^\s*)/g, '');
@@ -219,6 +209,71 @@ T.Parse = {
       return num + '元';
     }
   }
-},
+};
+//数据请求前将数据进行处理
+T.ageAjaxData = function (data) {
+  var split = '';
+  var res = wx.getSystemInfoSync();
+  return Object.assign({
+    brand: res.brand
+  }, data);
+};
+//数据请求后将数据进行处理
+T.endAjaxData = function (data) {
+  if (!data || data.status == -200) {
+    mui.toast(data.message);
+    mui.openWindow({
+      url: '../user/login.html',
+      id: 'user/login.html',
+      styles: {
+        popGesture: 'close'
+      }
+    });
+    return false;
+  }
+  return data;
+};
+/**
+   * 用途：封装Ajax请求
+   * @example T.ajaxPost('index/index/index',{a:111,b:222,c:333}, function(res) {});
+   * @parameter (string)	url      	请求地址
+   *            (obj)   	data      	需要传递的数据
+   *            (fun)   	callback    请求回调
+   */
+T.ajaxPostLoading = function (url, data, callback) {
+  wx.showNavigationBarLoading();
+  wx.showLoading({
+    title: '加载中'
+  });
+  wx.request({
+    url: url,
+    data: T.ageAjaxData(data),
+    header: {},
+    method: 'POST',
+    success: function (res) {
+      wx.hideNavigationBarLoading();
+      wx.hideLoading();
+      if (res.statusCode == 200) {
+        callback(res.data);
+      } else {
+        wx.showToast({
+          title: '请求错误',
+          icon: 'none'
+        });
+      }
+    },
+    fail: function (res) {
+      wx.hideNavigationBarLoading();
+      wx.hideLoading();
+      wx.showToast({
+        title: '请求错误',
+        icon: 'none'
+      });
+    },
+    complete: function (res) {
+
+    }
+  });
+};
 
 module.exports = { T }

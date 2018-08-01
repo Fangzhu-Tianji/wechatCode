@@ -15,6 +15,18 @@ Page({
   onLoad: function (options) {
     console.log(util)
   },
+  //点击扫码
+  onSweep: function () {
+    wx.scanCode({
+      success: function (res) {
+        wx.showToast({
+          title: res.result,
+          icon: 'none'
+        });
+      }
+    })
+  },
+  //进入搜索页
   onSearchTap: function () {
     wx.navigateTo({
       url: '../search/search/search'

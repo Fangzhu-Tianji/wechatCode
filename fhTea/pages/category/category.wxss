@@ -1,4 +1,15 @@
 /* pages/category/category.wxss */
 .head { box-sizing: border-box; height: 88rpx; width: 100%; padding: 14rpx 20rpx; background-color: #f7fffb; display: flex; align-items: center; }
+.head .sweep { width: 80rpx; display: flex; flex-direction: column; text-align: center; }
+.head .sweep .iconfont { font-size: 40rpx; font-weight: bold; color: #f60500; }
+.head .sweep .txt { font-size: 18rpx; color: #666; }
 .head .search { flex: 1; height: 100%; display: flex; padding: 0 10rpx; align-items: center; background-color: #e5e5e5; border-radius: 10rpx; }
 .head .search .txt { margin-left: 14rpx; }
+/* tab切换 */
+.category-tab { padding: 0 30rpx; border-top: 1rpx solid #eeeeee; border-bottom: 1rpx solid #f9f9f9; display: flex; justify-content: space-around; }
+.category-tab-item { font-size: 30rpx; height: 80rpx; line-height: 80rpx; color: #333333; text-align: center; position: relative; flex: 1; }
+.category-tab-item.active { color: #f60500; }
+.category-tab-item .up-triangle { width: 0; height: 0; border: 10rpx solid #ccc; border-color: transparent transparent #ccc transparent; position: absolute; top: 18rpx; left: 50%; transform: translateX(44rpx); }
+.category-tab-item .down-triangle { width: 0; height: 0; border: 10rpx solid #ccc; border-color: #ccc transparent transparent transparent; position: absolute; bottom: 18rpx; left: 50%; transform: translateX(44rpx); }
+.category-tab-item .up-triangle.active { border: 10rpx solid #f60500; border-color: transparent transparent #f60500 transparent; }
+.category-tab-item .down-triangle.active { border: 10rpx solid #f60500; border-color: #f60500 transparent transparent transparent; }
