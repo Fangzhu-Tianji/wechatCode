@@ -1,2 +1,32 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="cart-head">
+  <view class='num'>
+    共<text>6</text>件宝贝
+  </view>
+  <text class='operate' bindtap='aaaa'>编辑</text>
+</view>
+<view class='cart-content'>
+  <view class="cart-item {{active ? 'active' : ''}}" bindtouchmove="touchmove">
+    <view class='cart-item-content'>
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <view class='content'>
+        <view class='name'>
+          <view class='texthides'>测试商品测试商品测试商品测试商品测试商品测试商品测试商品测试商品</view>
+        </view>
+        <view class='spec'>规格：200KG</view>
+        <view class='price'>￥29.90</view>
+      </view>
+    </view>
+    <!-- 选择 -->
+    <view class='choose-wrap'>
+      <view class='iconfont icon-guifandanxuanweixuanzhong'></view>
+    </view>
+    <!-- 数量 -->
+    <view class='num-count'>
+      <view>-</view>
+      <input type="number"></input>
+      <view>+</view>
+    </view>
+    <!-- 删除 -->
+    <view class='del'>删除</view>
+  </view>
+</view>

@@ -10,6 +10,10 @@
       <icon type="search" class="search-img" size="13" color="#f60500"></icon>
       <text class='txt'>请输入商品名称</text>
     </view>
+    <view class='switch' catchtap="onSwitch">
+      <text hidden="{{!switchItem}}" class="iconfont icon-leimupinleifenleileibie"></text>
+      <text hidden="{{switchItem}}" class="iconfont icon-fenlei" style='font-weight:bold;font-size:56rpx;'></text>
+    </view>
   </view>
   <!-- tab -->
   <view class='category-tab'>
@@ -20,15 +24,61 @@
       <text class='up-triangle active'></text>
       <text class='down-triangle'></text>
     </view>
-    <view class='category-tab-item'>筛选</view>
+    <view class='category-tab-item' catchtap="switchShade">筛选</view>
   </view>
-  <view class='category-content'>
-    <view class='category-item'>
-      <image src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+  <view class="category-content {{switchItem ? '' : 'clearfix' }}">
+    <view class="category-item {{switchItem ? '' : 'chunk' }}">
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <view class='content'>
+        <view class='name'>福海印象（散装）小青柑福海印象（散装）小青柑</view>
+        <view class='price'>￥298.00</view>
+      </view>
+    </view>
+    <view class="category-item {{switchItem ? '' : 'chunk' }}">
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
       <view class='content'>
         <view class='name'>福海印象（散装）小青柑</view>
         <view class='price'>￥298.00</view>
       </view>
+    </view>
+    <view class="category-item {{switchItem ? '' : 'chunk' }}">
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <view class='content'>
+        <view class='name'>福海印象（散装）小青柑</view>
+        <view class='price'>￥298.00</view>
+      </view>
+    </view>
+    <view class="category-item {{switchItem ? '' : 'chunk' }}">
+      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <view class='content'>
+        <view class='name'>福海印象（散装）小青柑</view>
+        <view class='price'>￥298.00</view>
+      </view>
+    </view>
+  </view>
+  <!-- 加载动画 -->
+  <view class="loading-up">正在加载...</view>
+  <view class="loading-up loading-up-complete">已加载全部</view>
+</view>
+<!-- 筛选遮罩 -->
+<view class="category-shade {{showShades ? 'active' : ''}}" catchtouchmove="touchMove" catchtap="switchShade"></view>
+<view class="category-shade-content {{showShades ? 'active' : ''}}" catchtouchmove="touchMove">
+  <view class='content-item'>
+    <view class='name'>干普查</view>
+    <view class='tea'>
+      <text class="item {{contentItemId == 1 ? 'active' : ''}}" catchtap="requestData" data-id="1">小青柑</text>
+      <text class="item {{contentItemId == 2 ? 'active' : ''}}" catchtap="requestData" data-id="2">大红薯</text>
+      <text class="item {{contentItemId == 3 ? 'active' : ''}}" catchtap="requestData" data-id="3">小青柑</text>
+      <text class="item {{contentItemId == 4 ? 'active' : ''}}" catchtap="requestData" data-id="4">大红薯</text>
+    </view>
+  </view>
+  <view class='content-item'>
+    <view class='name'>干普查</view>
+    <view class='tea'>
+      <text class="item {{contentItemId == 5 ? 'active' : ''}}" catchtap="requestData" data-id="5">小青柑</text>
+      <text class="item {{contentItemId == 6 ? 'active' : ''}}" catchtap="requestData" data-id="6">大红薯</text>
+      <text class="item {{contentItemId == 7 ? 'active' : ''}}" catchtap="requestData" data-id="7">小青柑</text>
+      <text class="item {{contentItemId == 8 ? 'active' : ''}}" catchtap="requestData" data-id="8">大红薯</text>
     </view>
   </view>
 </view>

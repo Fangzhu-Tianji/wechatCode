@@ -10,7 +10,15 @@ text{ font-family: MicroSoft Yahei; font-size: 28rpx; color: #666; }
 /* 多出的文字用省略号代替 */
 .texthide {text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .texthides {display: -webkit-box !important; overflow: hidden;text-overflow: ellipsis;word-break: break-all;
--webkit-box-orient: vertical;-webkit-line-clamp: 3; /*数字几就代表几行*/ }
+-webkit-box-orient: vertical;-webkit-line-clamp: 2; /*数字几就代表几行*/ }
+/* 旋转动画 */
+@keyframes rotate{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+/* 上拉加载更多loading */
+.loading-up { padding: 20rpx; text-align: center; font-size: 24rpx; color: #666666; }
+.loading-up:before{display:inline-block;margin-right:10rpx;vertical-align:middle;content:'';width:40rpx;height:40rpx;background:url('http://p5bbzuqdk.bkt.clouddn.com/icon-loading.png') no-repeat;background-size:contain;animation:rotate 1s linear infinite}.loading-up-complete:before{display:none}
 
 /* 引入字体图标 */
 @font-face {font-family: "iconfont";
