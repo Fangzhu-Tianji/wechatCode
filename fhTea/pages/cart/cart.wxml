@@ -1,32 +1,46 @@
 <view class="cart-head">
   <view class='num'>
-    共<text>6</text>件宝贝
+    共<text>{{goodList.length}}</text>件宝贝
   </view>
-  <text class='operate' bindtap='aaaa'>编辑</text>
+  <text class='operate' catchtap="edit">{{switchEdit ? '编辑' : '完成'}}</text>
 </view>
 <view class='cart-content'>
-  <view class="cart-item {{active ? 'active' : ''}}" bindtouchmove="touchmove">
+  <view class="cart-item {{item.isTouchMove ? 'active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{goodList}}" wx:key="item">
     <view class='cart-item-content'>
-      <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+      <image class='pic' src='{{item.cover}}'></image>
       <view class='content'>
         <view class='name'>
-          <view class='texthides'>测试商品测试商品测试商品测试商品测试商品测试商品测试商品测试商品</view>
+          <view class='texthides'>{{item.name}}</view>
         </view>
-        <view class='spec'>规格：200KG</view>
-        <view class='price'>￥29.90</view>
+        <view class='spec'>规格：{{item.author}}</view>
+        <view class='price'>￥{{item.price}}</view>
       </view>
     </view>
     <!-- 选择 -->
-    <view class='choose-wrap'>
-      <view class='iconfont icon-guifandanxuanweixuanzhong'></view>
+    <view class='choose-wrap' data-index="{{index}}" catchtap='checkChange'>
+      <view class='iconfont icon-guifandanxuanweixuanzhong' hidden='{{item.checked}}'></view>
+      <view class='iconfont icon-xuanzhong-01' hidden='{{!item.checked}}'></view>
     </view>
     <!-- 数量 -->
     <view class='num-count'>
-      <view>-</view>
-      <input type="number"></input>
-      <view>+</view>
+      <view class="type minus {{item.count == 1 ? 'disabled' : ''}}" data-index="{{index}}" catchtap="goodsMinus">-</view>
+      <input class='inp' type="number" value='{{item.count}}' data-index="{{index}}" bindblur="goodsInp"></input>
+      <view class='type add' data-index="{{index}}" catchtap='goodsAdd'>+</view>
     </view>
     <!-- 删除 -->
-    <view class='del'>删除</view>
+    <view class='del' data-index="{{index}}" catchtap='delSingle'>删除</view>
   </view>
+
+</view>
+<view class='cart-operate'>
+  <view class='choose-wrap' catchtap='checkChangeAll'>
+    <view class='iconfont icon-guifandanxuanweixuanzhong' hidden='{{isCheckAll}}'></view>
+    <view class='iconfont icon-xuanzhong-01' hidden='{{!isCheckAll}}'></view>
+    <view class='txt'>全选</view>
+  </view>
+  <view class='all'>
+    <text>合计:</text>
+    <text class='red'>￥{{priceAll}}</text>
+  </view>
+  <view class="btn {{countAll > 0 ? 'active' : ''}}" catchtap='submitDel'>{{switchEdit ? '去付款' : '删除'}}{{countAll > 0 ? '(' + countAll + ')' : ''}}</view>
 </view>
