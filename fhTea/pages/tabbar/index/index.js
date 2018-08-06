@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var util = require('../../utils/util.js');
+var util = require('../../../utils/util.js');
 var app = getApp();
 
 Page({
@@ -11,12 +11,6 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ]
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function () {
     // util.T.ajaxPostLoading('http://fh.22um.com/index.php/index/index/index', {aa:333}, function (r) {

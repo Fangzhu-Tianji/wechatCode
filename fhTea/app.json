@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/my/my/my",
-    "pages/index/index",
-    "pages/cart/cart",
-    "pages/category/category",
+    "pages/tabbar/my/my",
+    "pages/tabbar/index/index",
+    "pages/tabbar/cart/cart",
+    "pages/tabbar/category/category",
     "pages/search/search/search"
   ],
   "window": {
@@ -20,25 +20,25 @@
     "list": [
       {
         "text": "首页",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/tabbar/index/index",
         "iconPath": "images/shouye.png",
         "selectedIconPath": "images/shouye-a.png"
       },
       {
         "text": "更多",
-        "pagePath": "pages/category/category",
+        "pagePath": "pages/tabbar/category/category",
         "iconPath": "images/gengduo.png",
         "selectedIconPath": "images/gengduo-a.png"
       },
       {
         "text": "购物车",
-        "pagePath": "pages/cart/cart",
+        "pagePath": "pages/tabbar/cart/cart",
         "iconPath": "images/gouwu.png",
         "selectedIconPath": "images/gouwu-a.png"
       },
       {
         "text": "我的",
-        "pagePath": "pages/my/my/my",
+        "pagePath": "pages/tabbar/my/my",
         "iconPath": "images/wode.png",
         "selectedIconPath": "images/wode-a.png"
       }

@@ -1,0 +1,85 @@
+<view class="my-head">
+  <image class='logo' src='http://p5bbzuqdk.bkt.clouddn.com/fh-logo.png'></image>
+  <view class='info'>
+    <view class='name'>放逐天际</view>
+    <view class='address'>(深圳总部)</view>
+  </view>
+</view>
+<view class='my-order'>
+  <view class='head'>订单管理</view>
+  <view class='clearfix wrap'>
+    <view class='fl item'>
+      <image class='pic' src='/images/icon-my-all.png'></image>
+      <view class='txt'>全部订单</view>
+    </view>
+    <view class='fl item'>
+      <image class='pic' src='/images/icon-my-pay.png'></image>
+      <view class='txt'>待付款</view>
+    </view>
+    <view class='fl item'>
+      <image class='pic' src='/images/icon-myr-take.png'></image>
+      <view class='txt'>待收货</view>
+    </view>
+    <view class='fl item'>
+      <image class='pic' src='/images/icon-my-evaluated.png'></image>
+      <view class='txt'>待评价</view>
+    </view>
+    <view class='fl item'>
+      <image class='pic' src='/images/icon-my-refund.png'></image>
+      <view class='txt'>售后</view>
+    </view>
+  </view>
+</view>
+<view class='list-wrap'>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-company.png'></image>
+    <text class='txt'>企业信息</text>
+    <text class='info'>审核通过</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-wallet.png'></image>
+    <text class='txt'>我的钱包</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-collect.png'></image>
+    <text class='txt'>收藏管理</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-address.png'></image>
+    <text class='txt'>收获地址</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-card.png'></image>
+    <text class='txt'>银行卡</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-lite.png'></image>
+    <text class='txt'>我的积分</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-help.png'></image>
+    <text class='txt'>帮助与中心</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-tel.png'></image>
+    <text class='txt'>关于我们</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my--share.png'></image>
+    <text class='txt'>分享注册</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space'>
+    <image class='pic' src='/images/icon-my-set.png'></image>
+    <text class='txt'>设置</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+</view>

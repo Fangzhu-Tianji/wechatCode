@@ -68,7 +68,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(333333)
+    wx.setTabBarBadge({
+      index: 2,
+      text: '1'
+    })
+  },
+  onShow: function () {
+    console.log(22222)
   },
   //编辑，完成
   edit: function () {

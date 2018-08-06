@@ -1,7 +1,0 @@
-<view class="my-head">
-  <image class='logo' src='http://p5bbzuqdk.bkt.clouddn.com/fh-logo.png'></image>
-  <view class='info'>
-    <view class='name'>放逐天际</view>
-    <view class='address'>(深圳总部)</view>
-  </view>
-</view>

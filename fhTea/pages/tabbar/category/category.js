@@ -1,5 +1,5 @@
 // pages/category/category.js
-var util = require('../../utils/util.js')
+var util = require('../../../utils/util.js')
 var app = getApp();
 Page({
 
@@ -35,7 +35,7 @@ Page({
   //进入搜索页
   onSearchTap: function () {
     wx.navigateTo({
-      url: '../search/search/search'
+      url: '../../search/search/search'
     })
   },
   //显示筛选遮罩

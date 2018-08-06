@@ -1,0 +1,15 @@
+/* pages/my/my/my.wxss */
+page { background-color: #efeff4; }
+.my-head { box-sizing: border-box; width: 100%; height: 220rpx; padding: 40rpx 0 40rpx 50rpx; background-color: #fd6f6d; display: flex; }
+.my-head .logo { width: 130rpx; height: 130rpx; margin-right: 40rpx; }
+.my-head .info { flex: 1; padding-top: 20rpx; }
+.my-head .name { font-size: 32rpx; color: #ffffff; margin-bottom: 10rpx; }
+.my-head .address { font-size: 28rpx; color: #ffffff; }
+.my-order { background-color: #ffffff; margin-bottom: 30rpx; }
+.my-order .head { box-sizing: border-box; width: 100%; height: 80rpx; padding-left: 30rpx; font-size: 30rpx; line-height: 80rpx; color: #333333; border-bottom: 1rpx solid #eeeeee; }
+.my-order .wrap { width: 100%; }
+.my-order .item { box-sizing: border-box; width: 20%; padding: 20rpx 10rpx; text-align: center; position: relative; }
+.my-order .item:after { content: ''; width: 1rpx; height: 60%; background-color: #eeeeee; position: absolute; top: 50%; right: 0; transform: translateY(-50%); }
+.my-order .item:nth-last-child(1):after { width: 0; }
+.my-order .item .pic { width: 50rpx; height: 50rpx; margin-bottom: 6rpx; }
+.my-order .item .txt { font-size: 26rpx; color: #333333;  }
