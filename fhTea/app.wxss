@@ -13,10 +13,11 @@ text{ font-family: MicroSoft Yahei; font-size: 28rpx; color: #666; }
 -webkit-box-orient: vertical;-webkit-line-clamp: 2; /*数字几就代表几行*/ }
 
 /* 带有空格的list列表 */
-.list-space { box-sizing: border-box; width: 100%; height: 90rpx; padding: 0 30rpx; background-color: #fff; margin-bottom: 20rpx; display: flex; align-items: center; }
+.list-space { box-sizing: border-box; width: 100%; min-height: 90rpx; padding: 10rpx 30rpx; background-color: #fff; margin-bottom: 20rpx; display: flex; align-items: center; }
 .list-space .pic { width: 40rpx; height: 40rpx; margin-right: 16rpx; }
 .list-space .txt { flex: 1; font-size: 28rpx; color: #333333; }
 .list-space .info { font-size: 28rpx; color: #f60500; }
+.list-space .info-666 { font-size: 28rpx; color: #666666; }
 .list-space .sup { font-size: 40rpx; color: #bbbbbb;  }
 
 /* 旋转动画 */

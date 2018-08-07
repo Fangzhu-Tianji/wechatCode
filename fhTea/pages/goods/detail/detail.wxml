@@ -1,0 +1,108 @@
+<!-- 轮播 -->
+<swiper class="g-swiper" indicator-dots="true" indicator-color="rgba(0,0,0,.6)" indicator-active-color="rgba(246,5,0,1)" autoplay="true" circular="true">
+  <block wx:for="{{syncData.imgUrls}}" wx:key="item" wx:for-index="index" wx:for-item="item">
+    <swiper-item catchtap="goDetail">
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='product-info'>
+  <view class='source-price'>
+    <text class='p'>590.00</text>
+    <text class='price'>市场价 ￥1388.00</text>
+  </view>
+  <view class='vip-price'>会员优惠价 ￥500.00</view>
+  <view class='name'>福海印象（散装）小青柑</view>
+  <view class='info'>
+    <text class='txt'>包邮</text>
+    <text class='txt' style='flex:1.4'>销量 8 笔</text>
+    <text class='txt' style='flex:1.4'>包装单位：件</text>
+    <view class='address'>
+      <text class="iconfont icon-dingwei1"></text>
+      <text>附近的店</text>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+  </view>
+</view>
+<view class='list-space'>
+  <text class='txt'>促销：</text>
+  <text class='info-666'>无</text>
+</view>
+<view class='list-space'>
+  <text class='txt'>品牌：</text>
+  <text class='info-666'>无</text>
+</view>
+<view class='list-space'>
+  <text class='txt'>产自：</text>
+  <text class='info-666'>无</text>
+</view>
+<view class='list-space'>
+  <text class='txt'>规格：</text>
+  <text class='info-666'>×1</text>
+  <text class='iconfont icon-youjiantou sup'></text>
+</view>
+<view class='list-space'>
+  <text class='txt'>商品属性：</text>
+  <text class='info-666'></text>
+</view>
+<view class='list-space'>
+  <text class='txt'>商品评价：</text>
+  <text class='info-666'>暂无评价</text>
+  <text class='iconfont icon-youjiantou sup'></text>
+</view>
+<!-- 筛选遮罩 -->
+<view class="product-shade active"></view>
+<view class='product-shade-content active'>
+  <view class='head'>
+    <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+    <view class='info'>
+      <view class='name'>福海印象（散装）小青柑</view>
+      <view class='source-price'>
+        <text class='p'>590.00</text>
+        <text class='price'>原价 ￥1388.00</text>
+      </view>
+      <view class='num'>库存：1000</view>
+    </view>
+  </view>
+  <view class='sku-wrap'>
+    <view class='name'>包装</view>
+    <view class='txt-wrap'>
+      <text class='txt active'>散装</text>
+      <text class='txt'>盒装</text>
+      <text class='txt default'>盒装盒装</text>
+      <text class='txt active'>散装</text>
+      <text class='txt'>盒装</text>
+      <text class='txt default'>盒装盒装</text>
+    </view>
+  </view>
+  <view class='sku-wrap'>
+    <view class='name'>重量</view>
+    <view class='txt-wrap'>
+      <text class='txt'>250g</text>
+      <text class='txt'>500g</text>
+    </view>
+  </view>
+  <view class='num-wrap'>
+    <view class='name'>重量</view>
+    <view class='num-count'>
+      <view class="type minus {{item.count == 1 ? 'disabled' : ''}}" data-index="{{index}}" catchtap="goodsMinus">-</view>
+      <input class='inp' type="number" value='{{item.count}}' data-index="{{index}}" bindblur="goodsInp"></input>
+      <view class='type add' data-index="{{index}}" catchtap='goodsAdd'>+</view>
+    </view>
+  </view>
+</view>
+<!-- 底部操作按钮 -->
+<view class='product-operate'>
+  <view class='inco-wrap'>
+    <view class='iconfont icon-gouwuche2'></view>
+  </view>
+  <view class='inco-wrap'>
+    <view class='iconfont icon-gouwuche2'></view>
+  </view>
+  <view class='inco-wrap'>
+    <view class='iconfont icon-gouwuche2'></view>
+  </view>
+  <view class="operate">加入购物车</view>
+  <view class="operate red">立即购买</view>
+  <!-- <view class="operate default">暂无现货</view> -->
+</view>

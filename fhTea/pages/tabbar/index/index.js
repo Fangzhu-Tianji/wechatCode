@@ -23,10 +23,20 @@ Page({
         _this.loadCity(res.longitude, res.latitude)
       },
     })
+    //设置tabbar角标
+    wx.setTabBarBadge({
+      index: 2,
+      text: '1'
+    })
   },
   //上拉加载更多
   onReachBottom: function () {
     console.log('到底部了');
+  },
+  goDetail: function () {
+    wx.navigateTo({
+      url: '/pages/goods/detail/detail'
+    })
   },
   //百度地图获取城市列表
   loadCity: function (longitude, latitude) {

@@ -12,9 +12,9 @@
     </view>
   </view>
   <!-- 轮播 -->
-  <swiper class="i-swiper" indicator-dots="true" indicator-color="rgba(0,0,0,.6)" indicator-active-color="rgba(246,5,0,1)" autoplay="true" circular="true" catchtap="goDetailSwiper">
+  <swiper class="i-swiper" indicator-dots="true" indicator-color="rgba(0,0,0,.6)" indicator-active-color="rgba(246,5,0,1)" autoplay="true" circular="true">
     <block wx:for="{{imgUrls}}" wx:key="item" wx:for-index="index" wx:for-item="item">
-      <swiper-item>
+      <swiper-item catchtap="goDetail">
         <image src="{{item}}"></image>
       </swiper-item>
     </block>
