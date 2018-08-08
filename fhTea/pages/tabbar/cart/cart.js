@@ -83,7 +83,7 @@ Page({
   goodsMinus: function (e) {
     var index = e.target.dataset.index;
     var goodList = this.data.goodList;
-    if (count <= 1) {
+    if (goodList[index].count <= 1) {
       return;
     } else {
       goodList[index].count--;
