@@ -1,51 +1,112 @@
-var detail = require('../../../data/goodsDetail.js')
-var app = getApp();
+
 Page({
   data: {
-    isShowSpace: false, //是否显示规格
-    firstIndex: -1, //商品规格索引值
-    commodityAttr: [],  //商品规格请求的数据
-    attrValueList: [], //商品规格转换的数据
-    commodityAttrName: '', //选中之后的商品规格值
-    skuCount: 0, //规格数量
-    buyCount: 1, //购买数量
-    buyCountMax: 10, //最大购买量
-    skuInfo: {
-      image: '',
-      name: '',
-      member_price: '', //会员价
-      market_price: '', //市场价
-      quantity: 0, //库存
-      max_buy: 0, //最大购买量
-    }, //点击选择规格展示的数据
-    skuInfos: {}, //点击选择规格展示的默认数据
-    syncData: {} //
+    firstIndex: -1,
+    //准备数据
+    //数据结构：以一组一组来进行设定
+    commodityAttr: [
+      {
+        priceId: 1,
+        price: 35.0,
+        "stock": 8,
+        "attrValueList": [
+          {
+            "attrKey": "型号",
+            "attrValue": "2"
+          },
+          {
+            "attrKey": "颜色",
+            "attrValue": "白色"
+          },
+          {
+            "attrKey": "大小",
+            "attrValue": "小"
+          },
+          {
+            "attrKey": "尺寸",
+            "attrValue": "S"
+          }
+        ]
+      },
+      {
+        priceId: 2,
+        price: 35.1,
+        "stock": 9,
+        "attrValueList": [
+          {
+            "attrKey": "型号",
+            "attrValue": "1"
+          },
+          {
+            "attrKey": "颜色",
+            "attrValue": "黑色"
+          },
+          {
+            "attrKey": "大小",
+            "attrValue": "小"
+          },
+          {
+            "attrKey": "尺寸",
+            "attrValue": "M"
+          }
+        ]
+      },
+      {
+        priceId: 3,
+        price: 35.2,
+        "stock": 10,
+        "attrValueList": [
+          {
+            "attrKey": "型号",
+            "attrValue": "1"
+          },
+          {
+            "attrKey": "颜色",
+            "attrValue": "绿色"
+          },
+          {
+            "attrKey": "大小",
+            "attrValue": "大"
+          },
+          {
+            "attrKey": "尺寸",
+            "attrValue": "L"
+          }
+        ]
+      },
+      {
+        priceId: 4,
+        price: 35.2,
+        "stock": 10,
+        "attrValueList": [
+          {
+            "attrKey": "型号",
+            "attrValue": "1"
+          },
+          {
+            "attrKey": "颜色",
+            "attrValue": "绿色"
+          },
+          {
+            "attrKey": "大小",
+            "attrValue": "大"
+          },
+          {
+            "attrKey": "尺寸",
+            "attrValue": "L"
+          }
+        ]
+      }
+    ],
+    attrValueList: []
   },
-  onLoad: function (options) {
-    this.requestData();
-  },
-  //处理请求数据
-  requestData: function () {
-    var syncData = detail.detail.data.data;
-    syncData.description = syncData.description.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ');
-    //点击选择规格展示的数据
-    var skuInfo = {};
-    skuInfo.image = syncData.thumb;
-    skuInfo.name = syncData.name;
-    skuInfo.member_price = syncData.member_price;
-    skuInfo.market_price = syncData.market_price;
-    skuInfo.quantity = syncData.quantity;
-    skuInfo.max_buy = syncData.max_buy;
-    // 商品规格操作
+  onShow: function () {
     this.setData({
-      skuInfo: skuInfo,
-      skuInfos: skuInfo,
-      syncData: syncData,
-      includeGroup: syncData.commodityAttr,
-      commodityAttr: syncData.commodityAttr
+      includeGroup: this.data.commodityAttr
     });
     this.distachAttrValue(this.data.commodityAttr);
     // 只有一个属性组合的时候默认选中
+    // console.log(this.data.attrValueList);
     if (this.data.commodityAttr.length == 1) {
       for (var i = 0; i < this.data.commodityAttr[0].attrValueList.length; i++) {
         this.data.attrValueList[i].selectedValue = this.data.commodityAttr[0].attrValueList[i].attrValue;
@@ -55,121 +116,22 @@ Page({
       });
     }
   },
-  //切换显示规格
-  switchSpace: function () {
-    this.setData({ isShowSpace: !this.data.isShowSpace });
-  },
-  //禁止滚动穿透
-  touchMove: function () {
-    return;
-  },
-  //减商品数量
-  countMinus: function (e) {
-    var buyCount = this.data.buyCount;
-    if (buyCount <= 1) {
-      return;
-    } else {
-      buyCount--;
-      this.setData({
-        'buyCount': buyCount
-      });
-    }
-  },
-  //加商品数量
-  countAdd: function (e) {
-    var buyCount = this.data.buyCount;
-    var buyCountMax = this.data.buyCountMax;
-    if (buyCount >= buyCountMax) {
-      wx.showToast({
-        title: '已超出最大购买量',
-        icon: 'none'
-      });
-      return;
-    }
-    buyCount++;
-    this.setData({
-      'buyCount': buyCount
-    });
-  },
-  //输入商品数量
-  buyCountInp: function (e) {
-    var val = e.detail.value;
-    var buyCount = this.data.buyCount;
-    var buyCountMax = this.data.buyCountMax;
-    if (val == '' || val == 0) {
-      buyCount = 1;
-    }
-    else if (val >= buyCountMax) {
-      buyCount = buyCountMax;
-      wx.showToast({
-        title: '已超出最大购买量',
-        icon: 'none'
-      });
-    }
-    else {
-      buyCount = Number(val);
-    }
-    //更新数据
-    this.setData({
-      'buyCount': buyCount
-    });
-  },
-  //提交
-  submit: function (e) {
-    if (!this.data.isShowSpace) {
-      this.switchSpace();
-      return;
-    }
-    var type = e.currentTarget.dataset.type;
-    var value = [];
-    for (var i = 0; i < this.data.attrValueList.length; i++) {
-      if (!this.data.attrValueList[i].selectedValue) {
-        break;
-      }
-      value.push(this.data.attrValueList[i].selectedValue);
-    }
-    if (i < this.data.attrValueList.length) {
-      wx.showToast({
-        title: '请选择商品属性',
-        icon: 'none'
-      });
-    } else {
-      wx.showToast({
-        title: this.data.commodityAttrName,
-        icon: 'none',
-        duration: 2000
-      });
-    }
-  },
-  // //预览图片
-  // previewImage: function (e) {
-  //   var current = e.target.dataset.src;
-
-  //   wx.previewImage({
-  //     current: current, // 当前显示图片的http链接  
-  //     urls: this.data.imgUrls // 需要预览的图片http链接列表  
-  //   })
-  // },
-  // // 收藏
-  // addLike() {
-  //   this.setData({
-  //     isLike: !this.data.isLike
-  //   });
-  // },
-  // // 跳到购物车
-  // toCar() {
-  //   wx.switchTab({
-  //     url: '/pages/cart/cart'
-  //   })
-  // }
-  /* 选择规格逻辑操作 */
   /* 获取数据 */
   distachAttrValue: function (commodityAttr) {
+    /**
+      将后台返回的数据组合成类似
+      {
+        attrKey:'型号',
+        attrValueList:['1','2','3']
+      }
+    */
+    // 把数据对象的数据（视图使用），写到局部内
     var attrValueList = this.data.attrValueList;
     // 遍历获取的数据
     for (var i = 0; i < commodityAttr.length; i++) {
       for (var j = 0; j < commodityAttr[i].attrValueList.length; j++) {
         var attrIndex = this.getAttrIndex(commodityAttr[i].attrValueList[j].attrKey, attrValueList);
+        // console.log('属性索引', attrIndex); 
         // 如果还没有属性索引为-1，此时新增属性并设置属性值数组的第一个值；索引大于等于0，表示已存在的属性名的位置
         if (attrIndex >= 0) {
           // 如果属性值数组中没有该值，push新值；否则不处理
@@ -184,6 +146,7 @@ Page({
         }
       }
     }
+    // console.log('result', attrValueList)
     for (var i = 0; i < attrValueList.length; i++) {
       for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
         if (attrValueList[i].attrValueStatus) {
@@ -218,6 +181,16 @@ Page({
   },
   /* 选择属性值事件 */
   selectAttrValue: function (e) {
+    /*
+    点选属性值，联动判断其他属性值是否可选
+    {
+      attrKey:'型号',
+      attrValueList:['1','2','3'],
+      selectedValue:'1',
+      attrValueStatus:[true,true,true]
+    }
+    console.log(e.currentTarget.dataset);
+    */
     var attrValueList = this.data.attrValueList;
     var index = e.currentTarget.dataset.index;//属性索引
     var key = e.currentTarget.dataset.key;
@@ -235,11 +208,12 @@ Page({
   },
   /* 选中 */
   selectValue: function (attrValueList, index, key, value, unselectStatus) {
+    // console.log('firstIndex', this.data.firstIndex);
     var includeGroup = [];
-    // 如果是第一个选中的属性值，则该属性所有值可选
-    if (index == this.data.firstIndex && !unselectStatus) {
+    if (index == this.data.firstIndex && !unselectStatus) { // 如果是第一个选中的属性值，则该属性所有值可选
       var commodityAttr = this.data.commodityAttr;
       // 其他选中的属性值全都置空
+      // console.log('其他选中的属性值全都置空', index, this.data.firstIndex, !unselectStatus);
       for (var i = 0; i < attrValueList.length; i++) {
         for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
           attrValueList[i].selectedValue = '';
@@ -248,6 +222,8 @@ Page({
     } else {
       var commodityAttr = this.data.includeGroup;
     }
+
+    // console.log('选中', commodityAttr, index, key, value);
     for (var i = 0; i < commodityAttr.length; i++) {
       for (var j = 0; j < commodityAttr[i].attrValueList.length; j++) {
         if (commodityAttr[i].attrValueList[j].attrKey == key && commodityAttr[i].attrValueList[j].attrValue == value) {
@@ -256,6 +232,7 @@ Page({
       }
     }
     attrValueList[index].selectedValue = value;
+
     // 判断属性是否可选
     for (var i = 0; i < attrValueList.length; i++) {
       for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
@@ -275,10 +252,12 @@ Page({
         }
       }
     }
+    // console.log('结果', attrValueList);
     this.setData({
       attrValueList: attrValueList,
       includeGroup: includeGroup
     });
+
     var count = 0;
     for (var i = 0; i < attrValueList.length; i++) {
       for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
@@ -288,8 +267,7 @@ Page({
         }
       }
     }
-    // 第一次选中，同属性的值都可选
-    if (count < 2) {
+    if (count < 2) {// 第一次选中，同属性的值都可选
       this.setData({
         firstIndex: index
       });
@@ -298,12 +276,12 @@ Page({
         firstIndex: -1
       });
     }
-    this.getStock();
   },
   /* 取消选中 */
   disSelectValue: function (attrValueList, index, key, value) {
     var commodityAttr = this.data.commodityAttr;
     attrValueList[index].selectedValue = '';
+
     // 判断属性是否可选
     for (var i = 0; i < attrValueList.length; i++) {
       for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
@@ -314,15 +292,15 @@ Page({
       includeGroup: commodityAttr,
       attrValueList: attrValueList
     });
+
     for (var i = 0; i < attrValueList.length; i++) {
       if (attrValueList[i].selectedValue) {
         this.selectValue(attrValueList, i, attrValueList[i].attrKey, attrValueList[i].selectedValue, true);
       }
     }
-    this.getStock();
   },
-  // 获取库存等信息
-  getStock: function () {
+  /* 点击确定 */
+  submit: function () {
     var value = [];
     for (var i = 0; i < this.data.attrValueList.length; i++) {
       if (!this.data.attrValueList[i].selectedValue) {
@@ -330,27 +308,18 @@ Page({
       }
       value.push(this.data.attrValueList[i].selectedValue);
     }
-    //规格全部选择之后的操作
-    if (i >= this.data.attrValueList.length) {
-      value = value.join(",");
-      for (var j = 0; j < this.data.commodityAttr.length; j++) {
-        if (this.data.commodityAttr[j].merge_attribute_value_name == value) {
-          this.data.skuInfo.image = this.data.commodityAttr[j].image;
-          this.data.skuInfo.member_price = this.data.commodityAttr[j].member_price;
-          this.data.skuInfo.market_price = this.data.commodityAttr[j].market_price;
-          this.data.skuInfo.quantity = this.data.commodityAttr[j].quantity;
-          this.setData({
-            skuInfo: this.data.skuInfo,
-            commodityAttrName: this.data.commodityAttr[j].name
-          });
-        }
-      }
-    }
-    else {
-      this.setData({
-        skuInfo: this.data.skuInfos,
-        commodityAttrName: ''
-      });
+    if (i < this.data.attrValueList.length) {
+      wx.showToast({
+        title: '请完善属性',
+        icon: 'loading',
+        duration: 1000
+      })
+    } else {
+      wx.showToast({
+        title: '选择的属性：' + value.join('-'),
+        icon: 'sucess',
+        duration: 1000
+      })
     }
   }
 })

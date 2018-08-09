@@ -8,10 +8,10 @@ var detail = {
       "promotional_name": "测试商品",
       "market_price": "2134.00",
       "sale_price": "0.02",
-      "thumb": "goods/201805/20180523184813_9191.png",
+      "thumb": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180523184813_9191.png",
       "quantity": "200",
       "goods_brand": "1",
-      "description": "<img src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180523184839_6301.png' /><img src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180523184852_2903.png' />",
+      "description": "<p style='color:red;text-align:center;font-size:20px;margin-bottom:10px;'>这是商品简介</p><img src='http://7xnmrr.com1.z0.glb.clouddn.com/detail_1.jpg' /><img src='http://7xnmrr.com1.z0.glb.clouddn.com/detail_2.jpg' /><img src='http://7xnmrr.com1.z0.glb.clouddn.com/detail_3.jpg' /><img src='http://7xnmrr.com1.z0.glb.clouddn.com/detail_4.jpg' /><img src='http://7xnmrr.com1.z0.glb.clouddn.com/detail_5.jpg' /><img src='http://7xnmrr.com1.z0.glb.clouddn.com/detail_6.jpg' />",
       "key_words": "测试商品",
       "seo_title": "",
       "seo_description": "",
@@ -31,6 +31,83 @@ var detail = {
       "member_price": "0.02",
       "freight_type_name": "包邮",
       "brand_name": "福海",
+      "commodityAttr": [
+        {
+          "sku": "A0001",
+          "goods_id": "2",
+          "name": "颜色  :红色;重量  :125g;包装  :普通",
+          "quantity": "12",
+          "sale_price": "110.01",
+          "market_price": "1110.01",
+          "member_price": "110.01",
+          "merge_attribute_value_name": "红色,125g,普通",
+          "image": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201808/20180808112857_6682.jpg",
+          "attrValueList": [
+            {
+              "attrKey": "颜色",
+              "attrValue": "红色"
+            },
+            {
+              "attrKey": "重量",
+              "attrValue": "125g"
+            },
+            {
+              "attrKey": "包装",
+              "attrValue": "普通"
+            }
+          ]
+        },
+        {
+          "sku": "A0002",
+          "goods_id": "2",
+          "name": "颜色  :红色;重量  :125g;包装  :精装",
+          "quantity": "2",
+          "sale_price": "12.00",
+          "market_price": "1110.01",
+          "member_price": "12.00",
+          "merge_attribute_value_name": "红色,125g,精装",
+          "image": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201808/20180808112907_6164.jpg",
+          "attrValueList": [
+            {
+              "attrKey": "颜色",
+              "attrValue": "红色"
+            },
+            {
+              "attrKey": "重量",
+              "attrValue": "125g"
+            },
+            {
+              "attrKey": "包装",
+              "attrValue": "精装"
+            }
+          ]
+        },
+        {
+          "sku": "A0003",
+          "goods_id": "2",
+          "name": "颜色  :红色;重量  :250g;包装  :普通",
+          "quantity": "12",
+          "sale_price": "13.00",
+          "market_price": "213.00",
+          "member_price": "13.00",
+          "merge_attribute_value_name": "红色,250g,普通",
+          "image": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201808/20180808112917_9208.jpg",
+          "attrValueList": [
+            {
+              "attrKey": "颜色",
+              "attrValue": "红色"
+            },
+            {
+              "attrKey": "重量",
+              "attrValue": "250g"
+            },
+            {
+              "attrKey": "包装",
+              "attrValue": "普通"
+            }
+          ]
+        }
+      ],
       //商品规格对象
       "sku_info": {
         "1": {
@@ -89,7 +166,11 @@ var detail = {
       //轮播图
       "image_list": [
         {
-          "image": "goods/201805/20180526123008_1613.jpg"
+          "image": "http://mz.djmall.xmisp.cn/files/product/20161201/148057921620_middle.jpg",
+          "image": "http://mz.djmall.xmisp.cn/files/product/20161201/148057922659_middle.jpg",
+          "image": "http://mz.djmall.xmisp.cn/files/product/20161201/148057923813_middle.jpg",
+          "image": "http://mz.djmall.xmisp.cn/files/product/20161201/148057924965_middle.jpg",
+          "image": "http://mz.djmall.xmisp.cn/files/product/20161201/148057925958_middle.jpg",
         }
       ],
       //商品选中的规格型号

@@ -1,22 +1,22 @@
 <!-- 轮播 -->
 <swiper class="g-swiper" indicator-dots="true" indicator-color="rgba(0,0,0,.6)" indicator-active-color="rgba(246,5,0,1)" autoplay="true" circular="true">
-  <block wx:for="{{syncData.imgUrls}}" wx:key="item" wx:for-index="index" wx:for-item="item">
+  <block wx:for="{{syncData.image_list}}" wx:key="item" wx:for-index="index" wx:for-item="item">
     <swiper-item catchtap="goDetail">
-      <image src="{{item}}"></image>
+      <image src="{{item.image}}"></image>
     </swiper-item>
   </block>
 </swiper>
 <view class='product-info'>
   <view class='source-price'>
-    <text class='p'>590.00</text>
-    <text class='price'>市场价 ￥1388.00</text>
+    <text class='p'>￥{{syncData.sale_price}}</text>
+    <text class='price'>市场价 ￥{{syncData.market_price}}</text>
   </view>
-  <view class='vip-price'>会员优惠价 ￥500.00</view>
-  <view class='name'>福海印象（散装）小青柑</view>
+  <view class='vip-price'>会员优惠价 ￥{{syncData.member_price}}</view>
+  <view class='name'>{{syncData.name}}</view>
   <view class='info'>
-    <text class='txt'>包邮</text>
-    <text class='txt' style='flex:1.4'>销量 8 笔</text>
-    <text class='txt' style='flex:1.4'>包装单位：件</text>
+    <text class='txt'>{{syncData.freight_type_name}}</text>
+    <text class='txt' style='flex:1.4'>销量 {{syncData.sales_volume}} 笔</text>
+    <text class='txt' style='flex:1.4'>包装单位：{{syncData.units}}</text>
     <view class='address'>
       <text class="iconfont icon-dingwei1"></text>
       <text>附近的店</text>
@@ -38,7 +38,8 @@
 </view>
 <view class='list-space' catchtap='switchSpace'>
   <text class='txt'>规格：</text>
-  <text class='info-666'>×1</text>
+  <text class='info-666' style='margin-right:10rpx;'>{{commodityAttrName}}</text>
+  <text class='info-666' hidden='skuCount == 0'>×{{skuCount}}</text>
   <text class='iconfont icon-youjiantou sup'></text>
 </view>
 <view class='list-space'>
@@ -51,48 +52,42 @@
   <text class='iconfont icon-youjiantou sup'></text>
 </view>
 <view class='product-detail'>
-  <image src='{{item}}' wx:for="{{syncData.detailImg}}" wx:key="item"></image>
+  <rich-text nodes="{{syncData.description}}"></rich-text>
 </view>
 <!-- 筛选遮罩 -->
 <view class="product-shade {{isShowSpace ? 'active' : ''}}" catchtouchmove="touchMove" catchtap="switchSpace"></view>
 <view class="product-shade-content {{isShowSpace ? 'active' : ''}}" catchtouchmove="touchMove">
   <view class='iconfont icon-shanchu close' catchtap="switchSpace"></view>
   <view class='head'>
-    <image class='pic' src='https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201805/20180526123850_6554.JPG'></image>
+    <image class='pic' src='{{skuInfo.image}}'></image>
     <view class='info'>
-      <view class='texthide name'>福海印象（散装）小青柑</view>
+      <view class='texthide name'>{{skuInfo.name}}</view>
       <view class='source-price'>
-        <text class='p'>590.00</text>
-        <text class='price'>原价 ￥1388.00</text>
+        <text class='p'>￥{{skuInfo.member_price}}</text>
+        <text class='price'>市场价 ￥{{skuInfo.market_price}}</text>
       </view>
-      <view class='num'>库存：1000</view>
+      <view class='num'>
+        <text>库存：{{skuInfo.quantity}}</text>
+        <text style="color:#f60500;margin-left:20rpx;" hidden='{{skuInfo.max_buy == 0}}'>限购({{skuInfo.max_buy}})</text>
+      </view>
     </view>
   </view>
+  <!-- 商品规格 -->
   <scroll-view scroll-y class='sku-content'>
-    <!-- <view class='sku-wrap'>
-      <view class='name'>包装</view>
-      <view class='txt-wrap'>
-        <text class='txt active'>散装</text>
-        <text class='txt'>盒装</text>
-        <text class='txt disabled'>盒装盒装</text>
-        <text class='txt active'>散装</text>
-        <text class='txt'>盒装</text>
-        <text class='txt disabled'>盒装盒装</text>
-      </view>
-    </view> -->
-    <view class='sku-wrap' wx:for="{{syncData.sku_info}}" wx:key="item" wx:for-index="index" wx:for-item="item">
-      <view class='name'>{{item.name}}</view>
-      <view class='txt-wrap'>
-        <text class="txt {{item1.type == 'active' ? 'active' : item1.type == 'disabled' ? 'disabled' : ''}}" wx:for="{{item.value}}" wx:key="item1" wx:for-index="index1" wx:for-item="item1" data-index="{{index}}" data-indexdetail="{{index1}}" catchtap="chooseSku">{{item1.name}}</text>
+    <view class="sku-wrap" wx:for="{{attrValueList}}" wx:key="attrValueObj" wx:for-item="attrValueObj" wx:for-index="attrIndex">
+      <view class="name">{{attrValueObj.attrKey}}</view>
+      <view class="txt-wrap">
+        <view class="txt {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'active':''):'disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
+        data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:key="value" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
       </view>
     </view>
   </scroll-view>
   <view class='num-wrap'>
     <view class='name'>数量</view>
     <view class='num-count'>
-      <view class="type minus">-</view>
-      <input class='inp' type="number" value='3'></input>
-      <view class='type add'>+</view>
+      <view class="type minus {{buyCount == 1 ? 'disabled' : ''}}" catchtap="countMinus">-</view>
+      <input class='inp' type="number" value='{{buyCount}}' bindblur="buyCountInp"></input>
+      <view class="type add {{buyCount >= buyCountMax ? 'disabled' : ''}}" catchtap="countAdd">+</view>
     </view>
   </view>
 </view>
@@ -107,7 +102,7 @@
   <view class='inco-wrap'>
     <view class='iconfont icon-gouwuche2'></view>
   </view>
-  <view class="operate">加入购物车</view>
-  <view class="operate red">立即购买</view>
+  <view class="operate" catchtap='submit' data-type='cart'>加入购物车</view>
+  <view class="operate red" catchtap='submit' data-type='buy'>立即购买</view>
   <!-- <view class="operate default">暂无现货</view> -->
 </view>

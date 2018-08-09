@@ -1,157 +1,179 @@
 Page({
   data: {
+    skuInfo: {
+      pic: 'http://p5bbzuqdk.bkt.clouddn.com/pic3.png',
+      stock: 0,
+      name: '小青柑'
+    },
     firstIndex: -1,
     //准备数据
     //数据结构：以一组一组来进行设定
     commodityAttr: [
       {
-        "priceId": 1,
         "price": 35.0,
-        "stock": 8,
+        "quantity": 8,
+        "image": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201808/20180808112857_6682.jpg",
+        "sku": "红色,125g,普通",
+        "name": "颜色  :红色;重量  :125g;包装  :普通",
         "attrValueList": [
           {
-            "attrKey": "型号",
-            "attrValue": "2"
-          },
-          {
             "attrKey": "颜色",
-            "attrValue": "白色"
+            "attrValue": "红色"
           },
           {
-            "attrKey": "大小",
-            "attrValue": "小"
+            "attrKey": "重量",
+            "attrValue": "125g"
           },
           {
-            "attrKey": "尺寸",
-            "attrValue": "S"
+            "attrKey": "包装",
+            "attrValue": "普通"
           }
         ]
       },
       {
-        "priceId": 2,
-        "price": 35.1,
-        "stock": 9,
+        "price": 35.0,
+        "quantity": 28,
+        "image": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201808/20180808112907_6164.jpg",
+        "name": "颜色  :红色;重量  :500g;包装  :普通",
+        "sku": "红色,500g,普通",
         "attrValueList": [
           {
-            "attrKey": "型号",
-            "attrValue": "1"
-          },
-          {
             "attrKey": "颜色",
-            "attrValue": "黑色"
+            "attrValue": "红色"
           },
           {
-            "attrKey": "大小",
-            "attrValue": "小"
+            "attrKey": "重量",
+            "attrValue": "500g"
           },
           {
-            "attrKey": "尺寸",
-            "attrValue": "M"
+            "attrKey": "包装",
+            "attrValue": "普通"
           }
         ]
       },
       {
-        "priceId": 3,
-        "price": 35.2,
-        "stock": 10,
+        "price": 65.0,
+        "quantity": 18,
+        "image": "https://bsoss.oss-cn-hangzhou.aliyuncs.com/goods/201808/20180808112917_9208.jpg",
+        "name": "颜色  :绿色;重量  :500g;包装  :金装",
+        "sku": "绿色,500g,金装",
         "attrValueList": [
-          {
-            "attrKey": "型号",
-            "attrValue": "1"
-          },
           {
             "attrKey": "颜色",
             "attrValue": "绿色"
           },
           {
-            "attrKey": "大小",
-            "attrValue": "大"
+            "attrKey": "重量",
+            "attrValue": "500g"
           },
           {
-            "attrKey": "尺寸",
-            "attrValue": "L"
+            "attrKey": "包装",
+            "attrValue": "金装"
           }
         ]
       },
       {
-        "priceId": 4,
-        "price": 35.2,
-        "stock": 10,
+        "price": 65.0,
+        "quantity": 18,
+        "image": "http://p5bbzuqdk.bkt.clouddn.com/256x256.png",
+        "name": "颜色  :绿色;重量  :125g;包装  :金装",
+        "sku": "绿色,125g,金装",
         "attrValueList": [
-          {
-            "attrKey": "型号",
-            "attrValue": "1"
-          },
           {
             "attrKey": "颜色",
             "attrValue": "绿色"
           },
           {
-            "attrKey": "大小",
-            "attrValue": "大"
+            "attrKey": "重量",
+            "attrValue": "125g"
           },
           {
-            "attrKey": "尺寸",
-            "attrValue": "L"
+            "attrKey": "包装",
+            "attrValue": "金装"
           }
         ]
       }
     ],
-    attrValueList: [
-      {
-        "attrKey": "型号",
-        "attrValues": [
-          "2",
-          "1"
-        ],
-        "attrValueStatus": [
-          true,
-          true
-        ]
-      },
-      {
-        "attrKey": "颜色",
-        "attrValues": [
-          "白色",
-          "黑色",
-          "绿色"
-        ],
-        "attrValueStatus": [
-          true,
-          true,
-          true
-        ]
-      },
-      {
-        "attrKey": "大小",
-        "attrValues": [
-          "小",
-          "大"
-        ],
-        "attrValueStatus": [
-          true,
-          true
-        ]
-      },
-      {
-        "attrKey": "尺寸",
-        "attrValues": [
-          "S",
-          "M",
-          "L"
-        ],
-        "attrValueStatus": [
-          true,
-          true,
-          true
-        ]
-      }
-    ]
+    attrValueList: []
   },
   onShow: function () {
     this.setData({
       includeGroup: this.data.commodityAttr
     });
+    this.distachAttrValue(this.data.commodityAttr);
+    // 只有一个属性组合的时候默认选中
+    // console.log(this.data.attrValueList);
+    if (this.data.commodityAttr.length == 1) {
+      for (var i = 0; i < this.data.commodityAttr[0].attrValueList.length; i++) {
+        this.data.attrValueList[i].selectedValue = this.data.commodityAttr[0].attrValueList[i].attrValue;
+      }
+      this.setData({
+        attrValueList: this.data.attrValueList
+      });
+    }
+  },
+  /* 获取数据 */
+  distachAttrValue: function (commodityAttr) {
+    /**
+      将后台返回的数据组合成类似
+      {
+        attrKey:'型号',
+        attrValueList:['1','2','3']
+      }
+    */
+    // 把数据对象的数据（视图使用），写到局部内
+    var attrValueList = this.data.attrValueList;
+    // 遍历获取的数据
+    for (var i = 0; i < commodityAttr.length; i++) {
+      for (var j = 0; j < commodityAttr[i].attrValueList.length; j++) {
+        var attrIndex = this.getAttrIndex(commodityAttr[i].attrValueList[j].attrKey, attrValueList);
+        // console.log('属性索引', attrIndex); 
+        // 如果还没有属性索引为-1，此时新增属性并设置属性值数组的第一个值；索引大于等于0，表示已存在的属性名的位置
+        if (attrIndex >= 0) {
+          // 如果属性值数组中没有该值，push新值；否则不处理
+          if (!this.isValueExist(commodityAttr[i].attrValueList[j].attrValue, attrValueList[attrIndex].attrValues)) {
+            attrValueList[attrIndex].attrValues.push(commodityAttr[i].attrValueList[j].attrValue);
+          }
+        } else {
+          attrValueList.push({
+            attrKey: commodityAttr[i].attrValueList[j].attrKey,
+            attrValues: [commodityAttr[i].attrValueList[j].attrValue]
+          });
+        }
+      }
+    }
+    // console.log('result', attrValueList)
+    for (var i = 0; i < attrValueList.length; i++) {
+      for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
+        if (attrValueList[i].attrValueStatus) {
+          attrValueList[i].attrValueStatus[j] = true;
+        } else {
+          attrValueList[i].attrValueStatus = [];
+          attrValueList[i].attrValueStatus[j] = true;
+        }
+      }
+    }
+    this.setData({
+      attrValueList: attrValueList
+    });
+  },
+  getAttrIndex: function (attrName, attrValueList) {
+    // 判断数组中的attrKey是否有该属性值
+    for (var i = 0; i < attrValueList.length; i++) {
+      if (attrName == attrValueList[i].attrKey) {
+        break;
+      }
+    }
+    return i < attrValueList.length ? i : -1;
+  },
+  isValueExist: function (value, valueArr) {
+    // 判断是否已有属性值
+    for (var i = 0; i < valueArr.length; i++) {
+      if (valueArr[i] == value) {
+        break;
+      }
+    }
+    return i < valueArr.length;
   },
   /* 选择属性值事件 */
   selectAttrValue: function (e) {
@@ -166,18 +188,10 @@ Page({
     console.log(e.currentTarget.dataset);
     */
     var attrValueList = this.data.attrValueList;
-    var index = e.currentTarget.dataset.index;//父级属性索引
-    var key = e.currentTarget.dataset.key;//父级attrKey
-    var value = e.currentTarget.dataset.value; //子级attrValues的值
-    console.log('index' + index);
-    console.log('key' + key);
-    console.log('value' + value);
-    console.log(e.currentTarget.dataset.status);//子级attrValueStatus的值
-    console.log(e.currentTarget.dataset.selectedvalue);//父级selectedvalue
-    console.log(e.currentTarget.dataset.value);
-    console.log(this.data.firstIndex);
+    var index = e.currentTarget.dataset.index;//属性索引
+    var key = e.currentTarget.dataset.key;
+    var value = e.currentTarget.dataset.value;
     if (e.currentTarget.dataset.status || index == this.data.firstIndex) {
-      console.log(4444)
       if (e.currentTarget.dataset.selectedvalue == e.currentTarget.dataset.value) {
         // 取消选中
         this.disSelectValue(attrValueList, index, key, value);
@@ -189,7 +203,6 @@ Page({
     }
   },
   /* 选中 */
-  //selectValue(list,0,'型号',2)
   selectValue: function (attrValueList, index, key, value, unselectStatus) {
     // console.log('firstIndex', this.data.firstIndex);
     var includeGroup = [];
@@ -204,7 +217,6 @@ Page({
       }
     } else {
       var commodityAttr = this.data.includeGroup;
-      console.log(commodityAttr)
     }
 
     // console.log('选中', commodityAttr, index, key, value);
@@ -215,15 +227,14 @@ Page({
         }
       }
     }
-    attrValueList[index].selectedValue = value; //选中值赋值给selectedValue（新创建的）
+    attrValueList[index].selectedValue = value;
 
-    // 判断属性是否可选（全部设置为不能选择）
+    // 判断属性是否可选
     for (var i = 0; i < attrValueList.length; i++) {
       for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
         attrValueList[i].attrValueStatus[j] = false;
       }
     }
-    console.log(includeGroup);
     for (var k = 0; k < attrValueList.length; k++) {
       for (var i = 0; i < includeGroup.length; i++) {
         for (var j = 0; j < includeGroup[i].attrValueList.length; j++) {
@@ -237,7 +248,6 @@ Page({
         }
       }
     }
-    console.log(includeGroup);
     // console.log('结果', attrValueList);
     this.setData({
       attrValueList: attrValueList,
@@ -262,12 +272,12 @@ Page({
         firstIndex: -1
       });
     }
+    this.getStock();
   },
   /* 取消选中 */
   disSelectValue: function (attrValueList, index, key, value) {
     var commodityAttr = this.data.commodityAttr;
     attrValueList[index].selectedValue = '';
-
     // 判断属性是否可选
     for (var i = 0; i < attrValueList.length; i++) {
       for (var j = 0; j < attrValueList[i].attrValues.length; j++) {
@@ -278,11 +288,38 @@ Page({
       includeGroup: commodityAttr,
       attrValueList: attrValueList
     });
-
     for (var i = 0; i < attrValueList.length; i++) {
       if (attrValueList[i].selectedValue) {
         this.selectValue(attrValueList, i, attrValueList[i].attrKey, attrValueList[i].selectedValue, true);
       }
+    }
+    this.getStock();
+  },
+  // 获取库存
+  getStock: function () {
+    var value = [];
+    for (var i = 0; i < this.data.attrValueList.length; i++) {
+      if (!this.data.attrValueList[i].selectedValue) {
+        break;
+      }
+      value.push(this.data.attrValueList[i].selectedValue);
+    }
+    if (i >= this.data.attrValueList.length) {
+      value = value.join(",");
+      console.log(value);
+      for (var j = 0; j < this.data.commodityAttr.length; j++) {
+        if (this.data.commodityAttr[j].sku == value) {
+          console.log(this.data.commodityAttr[j].price);
+          this.data.skuInfo.pic = this.data.commodityAttr[j].image;
+          this.data.skuInfo.stock = this.data.commodityAttr[j].quantity;
+          this.setData({
+            skuInfo: this.data.skuInfo
+          });
+        }
+      }
+    }
+    else {
+
     }
   },
   /* 点击确定 */
@@ -301,7 +338,6 @@ Page({
         duration: 1000
       })
     } else {
-      console.log(value.join('-'))
       wx.showToast({
         title: '选择的属性：' + value.join('-'),
         icon: 'sucess',

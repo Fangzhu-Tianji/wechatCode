@@ -12,6 +12,7 @@ page { background-color: #efeff4; }
 .product-info .address { flex: 1.8; height: 60rpx; display: flex; align-items: center; justify-content: center; }
 .product-info .iconfont { font-size: 26rpx; color: #999; }
 .product-info text { font-size: 24rpx; color: #999; margin: 0 2rpx; }
+.product-detail { padding-bottom: 100rpx; }
 /* 选规格遮罩 */
 .product-shade { width: 100%; height: 100%; background: rgba(0,0,0,.7); position: fixed; top: 0; left: 0; z-index: 9; display: none; }
 .product-shade.active { display: block; }
@@ -26,6 +27,7 @@ page { background-color: #efeff4; }
 .product-shade-content .head .p { font-size: 30rpx; color: #f60500; margin-right: 20rpx; }
 .product-shade-content .head .price { font-size: 24rpx; color: #999999; text-decoration: line-through; }
 .product-shade-content .head .num { font-size: 24rpx; color: #333; }
+.product-shade-content .head .num text { font-size: 24rpx; color: #333; }
 .product-shade-content .sku-content { box-sizing: border-box; max-height: 600rpx; }
 .product-shade-content .sku-wrap { margin-bottom: 10rpx; }
 .product-shade-content .sku-wrap .name { font-size: 30rpx; color: #333333; margin-bottom: 14rpx; }
