@@ -1,0 +1,17 @@
+<view class="about-title">人物简介</view>
+<text class="about-con">一个热爱生活，热爱旅行的佛系程序猿\n相信明天会越来越精彩</text>
+<view class="hr"></view>
+<view class="about-title">人物介绍</view>
+<image class="logo" src="/images/about-us.png" style="margin-bottom:30rpx;"></image>
+<view class="about-info">
+  <view class="name">放逐天际</view>
+  <view>
+    <text class="about-con">前端工程师/旅行达人\nWeChat：zch793262201\n邮箱：793262201@qq.com</text>
+  </view>
+  <view>
+    <text class="about-illustrate">有任何关于公众号，小程序，APP等\n相关的问题都可以来骚扰我。\n另外有去惠州海边玩的也可以来找我订房\n绝对一手货源，每间房精装修特别漂亮</text>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="about-title">扫描二维码加微信</view>
+<image class="logo" src="/images/wx-code.jpg" style="margin-bottom:30rpx;" catchtap="previewCode"></image>

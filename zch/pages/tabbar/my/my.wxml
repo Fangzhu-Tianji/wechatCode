@@ -1,0 +1,20 @@
+<view class="my-head">
+  <image class='bg' src='/images/my-bg.jpg'></image>
+  <image class='logo' src='/images/my-logo.jpg'></image>
+  <view class='info'>
+    <view class='name'>放逐天际</view>
+    <view class='address'>微信：zch793262201</view>
+  </view>
+</view>
+<view class='list-wrap'>
+  <view class='list-space' catchtap="goPhone">
+    <image class='pic' src='/images/icon-my-photo.png'></image>
+    <text class='txt'>我的相册</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+  <view class='list-space' catchtap="goAboutUs">
+    <image class='pic' src='/images/icon-my-about.png'></image>
+    <text class='txt'>关于我</text>
+    <text class='iconfont icon-youjiantou sup'></text>
+  </view>
+</view>

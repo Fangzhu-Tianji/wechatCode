@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "dialog": "/components/dialog/dialog",
+    "good-list": "/components/good-list/good-list"
+  }
+}

@@ -1,0 +1,8 @@
+/* pages/my/my/my.wxss */
+page { background-color: #efeff4; }
+.my-head { box-sizing: border-box; width: 100%; height: 220rpx; padding: 40rpx 0 40rpx 50rpx; display: flex; margin-bottom: 20rpx; position: relative; }
+.my-head .bg { width: 100%; height: 220rpx; position: absolute; top: 0; left: 0; z-index: -1; }
+.my-head .logo { width: 130rpx; height: 130rpx; border-radius: 50%; margin-right: 40rpx; }
+.my-head .info { flex: 1; padding-top: 20rpx; }
+.my-head .name { font-size: 32rpx; color: #ffffff; margin-bottom: 10rpx; }
+.my-head .address { font-size: 28rpx; color: #ffffff; }

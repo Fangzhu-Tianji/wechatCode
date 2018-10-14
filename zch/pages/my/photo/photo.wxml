@@ -1,0 +1,10 @@
+<view class="container">
+  <view wx:for="{{pic}}" wx:key="item" class="wrap" data-src="{{item}}" style="background:url('{{item}}') no-repeat center top;background-size: cover;" catchtap="previewImage"></view>
+</view>
+<!-- 加载动画 -->
+<view class="loading-up" hidden="{{upLoading == 0 || upLoading == 2}}">正在加载...</view>
+<view class="loading-up loading-up-complete" hidden="{{upLoading == 0 || upLoading == 1}}">已加载全部</view>
+<!-- 回到顶部 -->
+<view class='goTop' wx:if="{{scrollTop.goTop}}" catchtap='goTop'>
+  <image src='/images/go-top.png' mode='aspectFill'></image>
+</view>
