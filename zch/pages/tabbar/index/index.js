@@ -17,7 +17,7 @@ Page({
       listItem: indexData.indexHot
     })
     //自定义组件弹框
-    this.dialog = this.selectComponent('#dialog');
+    this.dialog = this.selectComponent("#dialog");
   },
   // 全部爆款
   hotAll: function () {
@@ -27,6 +27,13 @@ Page({
   _confirmEvent: function () {
     console.log('进入爆款页面');
     this.dialog.hideDialog();
+  },
+  //点击旅游攻略
+  goTour: function (e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/tour/tour1/tour'
+    })
   },
   // 转发分享
   onShareAppMessage: function (res) {

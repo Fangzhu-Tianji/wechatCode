@@ -20,20 +20,14 @@
         wx:key="item"
         content="{{item}}">
       </good-list>
-      <!-- <view class="content-item" wx:for="{{contentItem}}" wx:key="item">
-        <image src="{{item.image}}" mode="aspectFill" lazy-load="true" />
-        <view class="content-item-text">
-          <text>{{item.title}}</text>
-        </view>
-      </view> -->
     </view>
   </view>
   <view class="selection">
     <view class="header">
-      <text>热门旅游</text>
-      <text class="text-all">全部旅游</text>
+      <text>旅游攻略</text>
+      <text class="text-all">全部攻略</text>
     </view>
-    <view class="list-item" wx:for="{{listItem}}" wx:key="item">
+    <view class="list-item" wx:for="{{listItem}}" wx:key="item" catchtap="goTour" data-id="1">
       <view class="list-item-images">
         <image class='img' src="{{item.image}}" mode="aspectFill" lazy-load="true" />
         <image class='avatar' src="{{item.userimg}}" mode="aspectFill" lazy-load="true" />

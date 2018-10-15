@@ -3,7 +3,8 @@
     "pages/tabbar/index/index",
     "pages/tabbar/my/my",
     "pages/my/photo/photo",
-    "pages/my/about-us/about-us"
+    "pages/my/about-us/about-us",
+    "pages/tour/tour1/tour"
   ],
   "window": {
     "backgroundTextStyle": "light",

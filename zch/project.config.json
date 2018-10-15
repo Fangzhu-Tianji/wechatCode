@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.0",
+	"libVersion": "2.3.0",
 	"appid": "wx39236c96eb870c3b",
 	"projectname": "zch",
 	"condition": {

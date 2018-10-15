@@ -18,29 +18,29 @@ const indexGood = [
 ]
 const indexHot = [
   {
-    "title": "上海｜黄金周只能看“人从众”？NO!",
-    "image": "https://c2-q.mafengwo.net/s10/M00/F1/F7/wKgBZ1nngieALKxlAALjF8KyI0U84.jpeg",
-    "userimg": "http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/07/20170713-touxiang.jpg",
-    "content": "大概是国庆前两周，突然蹦出个想法，出去玩吧！What？国庆出游不是people moutain people sea吗？国庆假期的正确打开方式不是在单位加班吗？既然一时脑抽决定出去玩了，要不……就去那个一年四季都是旺季的地方，魔都上海吧（反正老婆没去过）！"
-  },
-  {
     "title": "穿梭奥地利，音乐与时光的交错。",
     "image": "https://b4-q.mafengwo.net/s10/M00/36/6B/wKgBZ1nJvayAVMZwABd4puD1mGk90.jpeg",
-    "userimg": "http://b4-q.mafengwo.net/s8/M00/7F/72/wKgBpVYoV16AeWY9AAC926GelCU89.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90",
+    "userimg": "https://p3-q.mafengwo.net/s11/M00/B7/1B/wKgBEFtKEuyAClcZAACHu9l_I7k33.jpeg?imageMogr2%2Fthumbnail%2F%21120x120r%2Fgravity%2FCenter%2Fcrop%2F%21120x120%2Fquality%2F90",
     "content": "奥地利，过去奥匈帝国辉煌的中心。在一战的硝烟退去后，它以一种独立的姿态出现在我们眼前。尽管国土面积远不如分崩瓦解前的奥匈帝国，奥地利的经济和文化依然傲视欧洲。作为“欧洲的心脏”，艺术家们在此掀起了欧洲文艺复兴的风潮，古典乐的盛行更是让这个国家被誉为“音乐之都”。"
   },
-  {
-    "title": "【W&W】纳米布的沙漠赞比西的河，生命的爱与狂欢  ▏南部非洲环游记",
-    "image": "https://p3-q.mafengwo.net/s10/M00/36/04/wKgBZ1neKbWATdUxAA0VDNIbIag84.jpeg",
-    "userimg": "http://b4-q.mafengwo.net/s10/M00/9C/07/wKgBZ1nvUR-AIaScAACx9CHlVxc51.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90",
-    "content": "关于如何描述非洲，我是矛盾的。既希望人们像我一样爱上它，许愿有生之年能够亲自走遍这片大陆；私心里又怕太多人知道它，以至于有一天回望，发现它已经不再是初见时的模样。"
-  },
-  {
-    "title": "Hong Kong&Macau 特别行政区，给特别的你！",
-    "image": "https://b4-q.mafengwo.net/s10/M00/1A/98/wKgBZ1h17eGAL2MZAAk8Xe-PBFs18.jpeg",
-    "userimg": "http://p2-q.mafengwo.net/s10/M00/4B/C1/wKgBZ1nbhSiAXreiAACcqtDMt8o03.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90",
-    "content": "香港（粤语：hoeng gong；英文：Hong Kong；普通话：xiāng gǎng；缩写：HK），简称“港”，全称为中华人民共和国香港特别行政区（HKSAR）。香港地处中国华南，珠江口以东，南海沿岸，北接广东省深圳市、西接珠江，与澳门特别行政区隔着珠江口相望，其余两面与南海邻接。"
-  }
+  // {
+  //   "title": "上海｜黄金周只能看“人从众”？NO!",
+  //   "image": "https://c2-q.mafengwo.net/s10/M00/F1/F7/wKgBZ1nngieALKxlAALjF8KyI0U84.jpeg",
+  //   "userimg": "http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/07/20170713-touxiang.jpg",
+  //   "content": "大概是国庆前两周，突然蹦出个想法，出去玩吧！What？国庆出游不是people moutain people sea吗？国庆假期的正确打开方式不是在单位加班吗？既然一时脑抽决定出去玩了，要不……就去那个一年四季都是旺季的地方，魔都上海吧（反正老婆没去过）！"
+  // },
+  // {
+  //   "title": "【W&W】纳米布的沙漠赞比西的河，生命的爱与狂欢  ▏南部非洲环游记",
+  //   "image": "https://p3-q.mafengwo.net/s10/M00/36/04/wKgBZ1neKbWATdUxAA0VDNIbIag84.jpeg",
+  //   "userimg": "http://b4-q.mafengwo.net/s10/M00/9C/07/wKgBZ1nvUR-AIaScAACx9CHlVxc51.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90",
+  //   "content": "关于如何描述非洲，我是矛盾的。既希望人们像我一样爱上它，许愿有生之年能够亲自走遍这片大陆；私心里又怕太多人知道它，以至于有一天回望，发现它已经不再是初见时的模样。"
+  // },
+  // {
+  //   "title": "Hong Kong&Macau 特别行政区，给特别的你！",
+  //   "image": "https://b4-q.mafengwo.net/s10/M00/1A/98/wKgBZ1h17eGAL2MZAAk8Xe-PBFs18.jpeg",
+  //   "userimg": "http://p2-q.mafengwo.net/s10/M00/4B/C1/wKgBZ1nbhSiAXreiAACcqtDMt8o03.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90",
+  //   "content": "香港（粤语：hoeng gong；英文：Hong Kong；普通话：xiāng gǎng；缩写：HK），简称“港”，全称为中华人民共和国香港特别行政区（HKSAR）。香港地处中国华南，珠江口以东，南海沿岸，北接广东省深圳市、西接珠江，与澳门特别行政区隔着珠江口相望，其余两面与南海邻接。"
+  // }
 ]
 const photo1 = [
   'http://img.ugirls.tv/uploads/magazine/content/30ff193d80f8c9ea2b5136ef488080c3_magazine_web_m.jpg',
