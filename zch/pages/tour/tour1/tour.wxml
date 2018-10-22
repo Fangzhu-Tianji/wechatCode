@@ -1,3 +1,18 @@
+<view class="essay-head">
+  <image class="bg" src="http://b4-q.mafengwo.net/s10/M00/36/6B/wKgBZ1nJvayAVMZwABd4puD1mGk90.jpeg?imageMogr2%2Fstrip" lazy-load="true" />
+  <image class="logo" src="http://p3-q.mafengwo.net/s11/M00/B7/1B/wKgBEFtKEuyAClcZAACHu9l_I7k33.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90" lazy-load="true" />
+</view>
+<view class="essay-head-info">
+  <view class="name">Yang (上海)</view>
+  <view class="music_botton play">
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+  </view>
+</view>
+
 <image src="https://b2-q.mafengwo.net/s10/M00/D9/91/wKgBZ1nEqVaAXTsrAAtIBzMI0aQ52.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
 <image src="https://p1-q.mafengwo.net/s10/M00/E0/2E/wKgBZ1nEsECAJ84nABRfB22gkjM28.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
 <image src="https://n4-q.mafengwo.net/s10/M00/E1/2F/wKgBZ1nEsNmAHuY5AAZpiLKZUP895.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
