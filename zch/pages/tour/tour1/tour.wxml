@@ -4,7 +4,7 @@
 </view>
 <view class="essay-head-info">
   <view class="name">Yang (上海)</view>
-  <view class="music_botton play">
+  <view class="music_botton {{music}}" catchtap="controlMusic">
     <text></text>
     <text></text>
     <text></text>
