@@ -31,5 +31,8 @@
         "selectedIconPath": "images/wode-a.png"
       }
     ]
-  }
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }

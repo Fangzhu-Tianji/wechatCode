@@ -1,9 +1,12 @@
 <view class="essay-head">
-  <image class="bg" src="http://b4-q.mafengwo.net/s10/M00/36/6B/wKgBZ1nJvayAVMZwABd4puD1mGk90.jpeg?imageMogr2%2Fstrip" lazy-load="true" />
+  <image class="bg" src="http://b4-q.mafengwo.net/s10/M00/36/6B/wKgBZ1nJvayAVMZwABd4puD1mGk90.jpeg?imageMogr2%2Fstrip" mode="widthFix" lazy-load="true" />
   <image class="logo" src="http://p3-q.mafengwo.net/s11/M00/B7/1B/wKgBEFtKEuyAClcZAACHu9l_I7k33.jpeg?imageMogr2%2Fthumbnail%2F%21200x200r%2Fgravity%2FCenter%2Fcrop%2F%21200x200%2Fquality%2F90" lazy-load="true" />
 </view>
 <view class="essay-head-info">
-  <view class="name">Yang (上海)</view>
+  <view class="info">
+    <view class="name">Yang (上海)</view>
+    <view class="time">2018-10-09 21:15</view>
+  </view>
   <view class="music_botton {{music}}" catchtap="controlMusic">
     <text></text>
     <text></text>
@@ -12,8 +15,10 @@
     <text></text>
   </view>
 </view>
-
-<image src="https://b2-q.mafengwo.net/s10/M00/D9/91/wKgBZ1nEqVaAXTsrAAtIBzMI0aQ52.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
-<image src="https://p1-q.mafengwo.net/s10/M00/E0/2E/wKgBZ1nEsECAJ84nABRfB22gkjM28.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
-<image src="https://n4-q.mafengwo.net/s10/M00/E1/2F/wKgBZ1nEsNmAHuY5AAZpiLKZUP895.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
-<image src="https://p3-q.mafengwo.net/s10/M00/ED/94/wKgBZ1nEug2AIlMlAAq_bUv8WeI51.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
+<view class="container">
+  <view class="txt">奥地利 ，过去奥匈帝国辉煌的中心。在一战的硝烟退去后，它以一种独立的姿态出现在我们眼前。尽管国土面积远不如分崩瓦解前的奥匈帝国， 奥地利 的经济和文化依然傲视 欧洲 。作为“ 欧洲 的心脏”，艺术家们在此掀起了 欧洲 文艺复兴的风潮，古典乐的盛行更是让这个国家被誉为“音乐之都”。</view>
+  <view class="txt">每当听到奥地利这个美丽国家的名字时，人们总会想到音乐之声、茜茜公主或是施华洛世奇水晶。然而这些都不是我追寻它的理由。大概天生缺乏艺术细胞，唯独对摄影这件事情有独钟，想去拥抱 阿尔卑斯山脉的湖光山色，领略这座“山水之间的音乐之城”的独特魅力。又大概是和这个国家天生八字不合，从抵达第一天到离开之后的日子，都留下了很多不愉快的回忆，以致于迟迟未动笔写下这篇游记。时隔几个月，慢慢回忆，或许可以吐槽少一点，美好多一点，至少留下的照片还是美美的。</view>
+  <image class="pic" src="https://b2-q.mafengwo.net/s10/M00/D9/91/wKgBZ1nEqVaAXTsrAAtIBzMI0aQ52.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
+  <image class="pic" src="https://b2-q.mafengwo.net/s10/M00/DC/FF/wKgBZ1nbdKGAJ5FEAIUelBS6Amo264.gif?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" mode="widthFix" lazy-load="true" />
+  <view class="txt">放眼整个 奥地利 ，第四 大城 市 萨尔茨堡 如同强韧的脉搏，支撑起整个国家的古典乐之心。阡陌交错的街道，蜿蜒盘旋的山间小径，奔腾不息的河流，无论是天地自然，还是人文景致，仿佛向路人低声吟唱着这座城市的情愫</view>
+</view>
