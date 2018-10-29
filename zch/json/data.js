@@ -67,16 +67,18 @@ const photo2 = [
   'http://img.ugirls.tv/uploads/magazine/content/f00f218e4a74bcdd16a5f5e4c75e4d4f_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/b64a5379228df08785faaf6029337f2f_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/b6686f324474fcb53c9ba900fe758d0b_magazine_web_m.jpg',
-  'http://img.ugirls.tv/uploads/magazine/content/2015/06/17/4bbff063c8c9cab8691fa2c7b47c87d1_magazine_web_m.jpg',
-  'http://img.ugirls.tv/uploads/magazine/content/2015/08/28/1f73980de1d7d9515ab5e4963ae68392_magazine_web_m.jpg',
-  'http://img.ugirls.tv/uploads/magazine/content/2015/08/28/f721311ea1e7a801609bca62e5bb4caa_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/178df1b008a2ed080eaa53f056632617_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/6cd8fc4a4ed60fec3e2dde07cbac3236_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/b1585c2f98885d4d56b3425f32d88edd_magazine_web_m.jpg',
-  'http://img.ugirls.tv/uploads/magazine/content/2015/09/09/62028e7397e05d38d9d575cc9160ba36_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/c167e8937accc11eb2d2bbf95b79813a_magazine_web_m.jpg',
   'http://img.ugirls.tv/uploads/magazine/content/22c4a810950e5edfa95045f5db53bd05_magazine_web_m.jpg',
-  'http://img.ugirls.tv/uploads/magazine/content/3e3f5641e3ec87cede29db18cf0acc51_magazine_web_m.jpg'
+  'http://img.ugirls.tv/uploads/magazine/content/3e3f5641e3ec87cede29db18cf0acc51_magazine_web_m.jpg',
+  'http://p17.qhimg.com/bdm/960_593_0/t01e9be8f54bf93fb8d.jpg',
+  'http://p18.qhimg.com/bdm/960_593_0/t0136c335a17d538505.jpg',
+  'http://p15.qhimg.com/bdm/960_593_0/t0158587a0e9267d217.jpg',
+  'http://p15.qhimg.com/bdm/960_593_0/t015dad67e3dcb61515.jpg',
+  'http://p18.qhimg.com/bdm/960_593_0/t01484cb944b66f0492.jpg',
+  'http://p18.qhimg.com/bdm/960_593_0/t0166b6912102fe8359.jpg'
 ]
 const photo3 = [
   'https://images.unsplash.com/7/Top_view.jpg?ixlib=rb-0.3.5&s=f9cf296cd8f5054d1b563ce7e9d5531d&auto=format&fit=crop&w=500&q=60',

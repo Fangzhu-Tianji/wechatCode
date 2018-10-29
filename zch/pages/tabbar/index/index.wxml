@@ -3,7 +3,7 @@
   <view class="selection">
     <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
       <block wx:for="{{imgUrls}}" wx:key="*this">
-        <swiper-item>
+        <swiper-item catchtap="goDetail">
           <image src="{{item}}" class="slide-image" mode="widthFix" lazy-load="true" />
         </swiper-item>
       </block>
@@ -11,8 +11,8 @@
   </view>
   <view class="selection">
     <view class="header">
-      <text>爆款精品</text>
-      <text class="text-all" catchtap="hotAll">全部爆款</text>
+      <text>科技生活</text>
+      <text class="text-all" catchtap="hotAll">全部科技</text>
     </view>
     <view class="content">
       <good-list id="goodList"

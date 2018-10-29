@@ -28,6 +28,11 @@ Page({
     console.log('进入爆款页面');
     this.dialog.hideDialog();
   },
+  goDetail: function () {
+    wx.navigateTo({
+      url: '/pages/tour/tour2/tour'
+    })
+  },
   //点击旅游攻略
   goTour: function (e) {
     var id = e.currentTarget.dataset.id;
