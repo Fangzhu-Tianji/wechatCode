@@ -1,7 +1,7 @@
 .essay-head { width: 100%; position: relative; }
 .essay-head .bg { display: block; width: 100%; }
 .essay-head .logo { width: 120rpx; height: 120rpx; border-radius: 50%; position: absolute; left: 30rpx; bottom: -60rpx; }
-.essay-head-info { display: flex; justify-content: space-between; padding: 30rpx 30rpx 30rpx 200rpx; box-shadow: 0 10rpx 20rpx rgba(0,0,0,.2); }
+.essay-head-info { display: flex; justify-content: space-between; padding: 30rpx 30rpx 30rpx 200rpx; box-shadow: 0 10rpx 20rpx rgba(0,0,0,.1); }
 .essay-head-info .name { font-size: 28rpx; color: #ff7200; margin-bottom: 10rpx; }
 .essay-head-info .time { font-size: 28rpx; color: #666666; }
 .essay-head-info .music_botton { width: 44px; height: 44px; border: 2rpx solid #ffa800; border-radius: 50%; position: relative; }

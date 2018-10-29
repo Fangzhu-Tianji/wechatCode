@@ -1,66 +1,44 @@
 // pages/tour/tour2/tour.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    // 弹幕
+    danmuList: [
+      {
+        text: '第 1s 出现的弹幕',
+        color: '#ff0000',
+        time: 1
+      },
+      {
+        text: '第 3s 出现的弹幕',
+        color: '#ff00ff',
+        time: 3
+      },
+      {
+        text: '第 10s 出现的弹幕',
+        color: '#ff00ff',
+        time: 10
+      }
+    ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.videoContext = wx.createVideoContext('myVideo');
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 发送弹幕
+  send: function (e) {
+    var detail = e.detail.values;
+    this.videoContext.sendDanmu({
+      text: detail,
+      color: '#ff4400'
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //上拉加载更多
+  lower: function () {
+    console.log('到底了')
   }
 })
