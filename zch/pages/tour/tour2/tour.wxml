@@ -20,6 +20,6 @@
   <view class="content">就很费劲大张旗鼓地拍了一个新概念作文，又硬塞进来许多商业诉求，真不如直接做个话剧……</view>
   <view class="title">发送弹幕</view>
   <view class="content danmu">
-    <input placeholder="请输入需要发送的弹幕" confirm-type="send" bindconfirm="send"/>
+    <input placeholder="请输入需要发送的弹幕" confirm-type="send" bindconfirm="send" adjust-position="false"/>
   </view>
 </scroll-view>
