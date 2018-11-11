@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/tour/tour2/tour",
     "pages/tabbar/index/index",
+    "pages/tour/tour3/tour",
+    "pages/tour/tour2/tour",
     "pages/tour/tour1/tour",
     "pages/tabbar/my/my",
     "pages/my/photo/photo",
-    "pages/my/about-us/about-us"
+    "pages/my/about-us/about-us",
+    "pages/tour/tour4/tour",
+    "pages/tour/tour5/tour"
   ],
   "window": {
     "backgroundTextStyle": "light",

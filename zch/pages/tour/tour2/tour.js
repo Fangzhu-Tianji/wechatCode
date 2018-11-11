@@ -21,7 +21,9 @@ Page({
         color: '#ff00ff',
         time: 10
       }
-    ]
+    ],
+    // 发送的弹幕
+    setDanmu: ''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -30,10 +32,13 @@ Page({
     this.videoContext = wx.createVideoContext('myVideo');
   },
   // 发送弹幕
-  send: function (e) {
-    var detail = e.detail.values;
+  goSend: function (e) {
+    var detailVal = e.detail.value;
+    this.setData({
+      setDanmu: ''
+    })
     this.videoContext.sendDanmu({
-      text: detail,
+      text: detailVal,
       color: '#ff4400'
     })
   },

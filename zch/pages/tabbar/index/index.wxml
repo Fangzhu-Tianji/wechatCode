@@ -1,18 +1,18 @@
 <!--index.wxml-->
 <view class="container">
   <view class="selection">
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
-      <block wx:for="{{imgUrls}}" wx:key="*this">
-        <swiper-item catchtap="goDetail">
-          <image src="{{item}}" class="slide-image" mode="widthFix" lazy-load="true" />
+    <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true" interval="3000" duration="1000">
+      <block wx:for="{{imgUrls}}" wx:key="item">
+        <swiper-item catchtap="goDetail" data-id="{{item.id}}">
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill" lazy-load="true" />
         </swiper-item>
       </block>
-  </swiper>
+    </swiper>
   </view>
   <view class="selection">
     <view class="header">
       <text>科技生活</text>
-      <text class="text-all" catchtap="hotAll">全部科技</text>
+      <!-- <text class="text-all" catchtap="hotAll">全部科技</text> -->
     </view>
     <view class="content">
       <good-list id="goodList"
@@ -25,7 +25,7 @@
   <view class="selection">
     <view class="header">
       <text>旅游攻略</text>
-      <text class="text-all">全部攻略</text>
+      <!-- <text class="text-all">全部攻略</text> -->
     </view>
     <view class="list-item" wx:for="{{listItem}}" wx:key="item" catchtap="goTour" data-id="1">
       <view class="list-item-images">

@@ -1,4 +1,4 @@
-<view class="content-item" catchtap="goDetail" data-title="{{content.title}}">
+<view class="content-item" catchtap="goDetail" data-title="{{content.title}}" data-id="{{content.id}}">
   <image src="{{content.image}}" mode="aspectFill" lazy-load="true" />
   <view class="content-item-text">
     <text>{{content.title}}</text>

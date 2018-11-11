@@ -21,10 +21,9 @@ Component({
   methods: {
     // 进入详情页
     goDetail: function (e) {
-      var title = e.currentTarget.dataset.title;
-      wx.showToast({
-        title: title,
-        icon: 'none'
+      var id = e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/tour/tour'+id+'/tour'
       })
     }
   }

@@ -1,0 +1,3 @@
+.title { padding: 30rpx 30rpx 0; font-size: 32rpx; font-weight: bold; color: #333333; }
+.content { padding: 20rpx 30rpx 0; font-size: 28rpx; color: #666666; }
+image { box-sizing: border-box; width: 100%; padding: 30rpx 30rpx 0; }
