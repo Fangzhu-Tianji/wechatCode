@@ -2,9 +2,14 @@ var indexData = require("../../../json/data.js");
 Page({
   data: {
     imgUrls: [
-      '/images/banner-2.jpg',
-      '/images/banner-1.jpg',
-      '/images/banner-3.jpg'
+      {
+        url: '/images/banner-1.jpg',
+        id: 2
+      },
+      {
+        url: '/images/banner-2.jpg',
+        id: 5
+      }
     ],
     contentItem: ['', '', '', ''],
     listItem: ['', '', '', '']
@@ -28,9 +33,10 @@ Page({
     console.log('进入爆款页面');
     this.dialog.hideDialog();
   },
-  goDetail: function () {
+  goDetail: function (e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/tour/tour2/tour'
+      url: '/pages/tour/tour'+id+'/tour'
     })
   },
   //点击旅游攻略
